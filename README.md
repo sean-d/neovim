@@ -20,13 +20,35 @@ A modern Neovim setup optimized for Go development with a focus on productivity 
 
 2. Clone this configuration:
    ```bash
-   git clone <your-repo-url> ~/.config/nvim
+   git clone git@github.com:sean-d/neovim.git ~/.config/nvim
    ```
 
-3. Start Neovim - plugins will auto-install on first launch:
+3. Run the setup script:
+   ```bash
+   cd ~/.config/nvim
+   ./init.sh
+   ```
+
+   Or manually start Neovim - plugins will auto-install on first launch:
    ```bash
    nvim
    ```
+
+## Keeping Your Config in Sync
+
+### Pull updates from your repo:
+```bash
+cd ~/.config/nvim
+git pull
+```
+
+### Save your customizations:
+```bash
+cd ~/.config/nvim
+git add -A
+git commit -m "Description of changes"
+git push
+```
 
 ## Key Mappings
 
