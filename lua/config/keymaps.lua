@@ -3,6 +3,11 @@
 
 local keymap = vim.keymap.set
 
+-- Definition preview
+keymap("n", "gd", function()
+  require("config.definition-preview").show_definition()
+end, { desc = "Show definition preview" })
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 keymap("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })

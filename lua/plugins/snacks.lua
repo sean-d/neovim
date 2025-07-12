@@ -100,7 +100,7 @@ return {
       { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
       
       -- LSP
-      { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+      -- { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" }, -- Using custom preview instead
       { "gr", function() Snacks.picker.lsp_references() end, desc = "References", nowait = true },
       { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
       { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },

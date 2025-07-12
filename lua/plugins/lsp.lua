@@ -39,14 +39,14 @@ return {
           end
 
           -- Navigation
-          map("gd", vim.lsp.buf.definition, "Goto Definition")
+          -- gd is handled in keymaps.lua for custom preview
           map("gD", vim.lsp.buf.declaration, "Goto Declaration")
           map("gI", vim.lsp.buf.implementation, "Goto Implementation")
           map("gr", vim.lsp.buf.references, "Goto References")
           map("gy", vim.lsp.buf.type_definition, "Goto Type Definition")
           
           -- Documentation
-          map("K", vim.lsp.buf.hover, "Hover Documentation")
+          map("K", function() require("config.definition-preview").hover() end, "Hover Documentation")
           map("gK", vim.lsp.buf.signature_help, "Signature Help")
           
           -- Code actions

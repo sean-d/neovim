@@ -73,9 +73,9 @@ Leader key: `<Space>`
 ### Code Navigation
 | Key | Description |
 |-----|-------------|
-| `gd` | Go to definition |
+| `gd` | Go to definition (custom preview window) |
 | `gr` | Find references |
-| `K` | Hover documentation |
+| `K` | Hover documentation (custom modal) |
 | `<leader>ca` | Code actions |
 | `<leader>cr` | Rename symbol |
 
@@ -134,6 +134,26 @@ Leader key: `<Space>`
 | `cs"'` | Change surrounding quotes from " to ' |
 | `ds"` | Delete surrounding quotes |
 | `ysiw"` | Add quotes around word |
+
+## Custom Features
+
+### Enhanced Definition Preview & Documentation
+This configuration includes custom floating windows for code navigation:
+
+- **Definition Preview (`gd`)**: Shows the definition in a beautiful floating window with:
+  - Full syntax highlighting matching your colorscheme
+  - File path and line numbers in the title
+  - Navigation options: `<CR>` to jump, `<C-v>` for vsplit, `<C-x>` for split, `<C-t>` for new tab
+  - Support for multiple definitions with numbered selection
+  - 10 lines before and 30 lines after the definition for context
+
+- **Hover Documentation (`K`)**: Displays documentation in a matching modal style with:
+  - Automatic detection of content type (pure code vs markdown)
+  - Proper syntax highlighting for code examples
+  - Scrolling support with `<C-d>`/`<C-u>`
+  - Clean, readable formatting
+
+Both windows use the same consistent UI style with rounded borders, centered titles, and helpful footers showing available keybindings.
 
 ## Plugins Overview
 
