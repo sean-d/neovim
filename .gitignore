@@ -1,0 +1,28 @@
+# Lazy.nvim
+lazy-lock.json
+
+# LSP and DAP
+.luarc.json
+
+# Local plugin development
+/dev
+
+# Temporary files
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Session files
+Session.vim
+*.vim.session
+
+# Tags
+tags
+.tags
+
+# Neovim runtime files
+.netrwhist
+
+# Local configuration overrides
+lua/config/local.lua
