@@ -1,0 +1,57 @@
+name: Deploy mdBook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'book.toml'
+      - '.github/workflows/mdbook.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install mdBook
+        run: cargo install mdbook --locked
+
+      - name: Build mdBook
+        run: |
+          mdbook build
+          ls -la docs/book  # Debugging: Confirm build output
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3  
+        with:
+          path: docs/book/  
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages  
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Download GitHub Pages artifact  
+        uses: actions/download-artifact@v4  
+        with:
+          name: github-pages  
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

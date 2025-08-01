@@ -1,0 +1,83 @@
+/* Normalize fonts across all pages */
+:root {
+    --main-font: "Source Serif Pro", Georgia, serif;
+    --code-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace;
+    --base-font-size: 2rem;  /* 32px base - 2x larger */
+    --line-height: 1.6;
+}
+
+/* Apply consistent font to all pages including index */
+.content,
+.content main,
+#content main,
+.chapter,
+main {
+    font-family: var(--main-font) !important;
+    font-size: var(--base-font-size);
+    line-height: var(--line-height);
+}
+
+/* Ensure paragraphs are consistent */
+.content p,
+main p {
+    font-family: var(--main-font) !important;
+    font-size: var(--base-font-size);
+    line-height: var(--line-height);
+    margin-bottom: 1.25rem;
+}
+
+/* Consistent heading styles */
+.content h1, main h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 1.275em;
+}
+
+.content h2, main h2 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: 1.275em;
+    margin-bottom: 0.875em;
+}
+
+.content h3, main h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 1.275em;
+    margin-bottom: 0.875em;
+}
+
+/* Consistent code blocks */
+.content code,
+main code {
+    font-family: var(--code-font) !important;
+    font-size: 1.75rem;  /* Much larger code text */
+}
+
+/* Consistent list styling */
+.content ul,
+.content ol,
+main ul,
+main ol {
+    font-family: var(--main-font) !important;
+    font-size: var(--base-font-size);
+    line-height: var(--line-height);
+}
+
+/* Fix any potential index page specific issues */
+.page {
+    font-family: var(--main-font) !important;
+}
+
+/* Ensure consistency in the sidebar */
+.sidebar {
+    font-family: var(--main-font) !important;
+}
+
+/* Tables should also be consistent */
+.content table,
+main table {
+    font-family: var(--main-font) !important;
+    font-size: var(--base-font-size);
+}
