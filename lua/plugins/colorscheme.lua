@@ -1,10 +1,12 @@
 return {
+  -- Catppuccin theme
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
     priority = 1000,
     opts = {
-      flavour = "macchiato", -- latte, frappe, macchiato, mocha
+      flavour = "macchiato",
       background = {
         light = "latte",
         dark = "macchiato",
@@ -12,10 +14,9 @@ return {
       transparent_background = false,
       color_overrides = {
         macchiato = {
-          -- Use Mocha's darker background colors
-          base = "#1e1e2e",     -- Mocha base
-          mantle = "#181825",   -- Mocha mantle
-          crust = "#11111b",    -- Mocha crust
+          base = "#1e1e2e",
+          mantle = "#181825",
+          crust = "#11111b",
         },
       },
       show_end_of_buffer = false,
@@ -61,17 +62,12 @@ return {
     },
     config = function(_, opts)
       require("catppuccin").setup(opts)
-      vim.cmd.colorscheme("catppuccin")
       
-      -- Flash.nvim highlights
-      vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = "#545c7e" })
-      vim.api.nvim_set_hl(0, "FlashMatch", { bg = "#3e4451", fg = "#cdd6f4" })
-      vim.api.nvim_set_hl(0, "FlashCurrent", { bg = "#45475a", fg = "#f5e0dc" })
-      vim.api.nvim_set_hl(0, "FlashLabel", { bg = "#f5c2e7", fg = "#11111b", bold = true })
+      -- Set up theme colors
+      require("config.theme-colors").setup()
       
-      -- Pink borders for floating windows (affects Harpoon and others)
-      vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#f5c2e7" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+      -- Set catppuccin-macchiato as default
+      vim.cmd.colorscheme("catppuccin-macchiato")
     end,
   },
 }

@@ -76,7 +76,9 @@ When in picker:
 ## Buffer Navigation
 
 ### Bufferline Features
-Buffers appear as tabs at the top with:
+Bufferline is **hidden by default** to keep the interface clean. Enable it with `<leader>ub` when you need visual buffer tabs.
+
+When enabled, buffers appear as tabs at the top with:
 - File type icons
 - Modified indicators `[+]`
 - Diagnostic counts

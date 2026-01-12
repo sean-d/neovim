@@ -83,6 +83,20 @@ return {
       -- Set up auto-session
       require("auto-session").setup(opts)
       
+      -- Clean up scratch buffers on startup
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          vim.schedule(function()
+            for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+              local name = vim.api.nvim_buf_get_name(buf)
+              if name:match("filetype%-match%-scratch") then
+                pcall(vim.api.nvim_buf_delete, buf, { force = true })
+              end
+            end
+          end)
+        end,
+      })
+      
       -- Fix for LSP not attaching to restored buffers
       vim.api.nvim_create_autocmd("SessionLoadPost", {
         callback = function()
@@ -95,6 +109,16 @@ return {
                 end)
               end
             end
+            
+            -- Clean up scratch buffers created by filetype detection
+            vim.schedule(function()
+              for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+                local name = vim.api.nvim_buf_get_name(buf)
+                if name:match("filetype%-match%-scratch") then
+                  pcall(vim.api.nvim_buf_delete, buf, { force = true })
+                end
+              end
+            end)
           end, 200)
         end,
       })

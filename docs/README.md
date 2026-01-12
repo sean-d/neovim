@@ -91,7 +91,7 @@ This configuration includes several custom-built features that enhance the devel
 ### Visual Enhancements
 - **Inline Git Blame** - Git blame information appears automatically at the end of lines in pink text after 1 second of cursor idle time, showing who last modified each line without cluttering the interface.
 - **Smart Indent Guides** - Active indent scope highlighted in mauve with animated transitions, while inactive guides remain subtle.
-- **Smart Bufferline** - Clean buffer tabs with file icons, diagnostics indicators, and the ability to pin important buffers.
+- **Smart Bufferline** - Clean buffer tabs with file icons, diagnostics indicators, and the ability to pin important buffers (hidden by default, toggle with `<leader>ub`).
 
 ## 🎮 Getting Started Shortcuts
 

@@ -497,7 +497,7 @@ If using tmux, `<C-h/j/k/l>` seamlessly navigates between Neovim windows and tmu
 
 | Key | Description |
 |-----|-------------|
-| `<leader>ub` | Toggle bufferline visibility |
+| `<leader>ub` | Toggle bufferline visibility (hidden by default) |
 | `<leader>ud` | Toggle diagnostics |
 | `<leader>ul` | Toggle line numbers |
 | `<leader>uL` | Toggle relative line numbers |

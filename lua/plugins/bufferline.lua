@@ -4,6 +4,10 @@ return {
     version = "*",
     dependencies = "echasnovski/mini.icons",
     event = "VeryLazy",
+    init = function()
+      -- Start with bufferline hidden
+      vim.opt.showtabline = 0
+    end,
     opts = {
       options = {
         -- Basic settings
@@ -79,5 +83,11 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      require("bufferline").setup(opts)
+      -- Ensure bufferline starts hidden
+      vim.opt.showtabline = 0
+      vim.g.bufferline_enabled = false
+    end,
   },
 }

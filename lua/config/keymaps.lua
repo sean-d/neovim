@@ -39,9 +39,6 @@ keymap("n", "<leader>Q", "<cmd>qa!<cr>", { desc = "Quit all" })
 
 -- UI toggles
 keymap("n", "<leader>ub", function()
-  if vim.g.bufferline_enabled == nil then
-    vim.g.bufferline_enabled = true
-  end
   vim.g.bufferline_enabled = not vim.g.bufferline_enabled
   
   if vim.g.bufferline_enabled then

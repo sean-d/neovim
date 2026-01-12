@@ -2,6 +2,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Disable bufferline by default
+vim.g.bufferline_enabled = false
+vim.opt.showtabline = 0
+
 -- Neovim options
 local opt = vim.opt
 
