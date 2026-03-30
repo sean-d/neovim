@@ -16,6 +16,7 @@ The following tools are needed for full functionality:
 - **Neovim**>= 0.9.0
 - **Git** - Plugin management and version control
 - **ripgrep** - Fast searching with `<leader>/`
+- **fd** - Fast file finding (used by fuzzy finders)
 - **Node.js** - LSP servers and markdown preview
 - **LuaRocks** - Lua dependencies
 - **Docker** - Containerized development with `<leader>cd*`
@@ -39,7 +40,7 @@ All prerequisites are installed by the platform-specific commands below.
 brew install --cask docker
 
 # Install other tools
-brew install neovim ripgrep lazygit lazydocker go node luarocks pngpaste shellcheck shfmt
+brew install neovim ripgrep fd lazygit lazydocker go node luarocks pngpaste shellcheck shfmt
 
 # Install global npm packages
 npm install -g eslint
@@ -90,7 +91,7 @@ sudo usermod -aG docker $USER
 # Log out and back in for group changes to take effect
 
 # Install core dependencies
-sudo apt install neovim ripgrep golang nodejs npm luarocks shellcheck shfmt
+sudo apt install neovim ripgrep fd-find golang nodejs npm luarocks shellcheck shfmt
 
 # Install global npm packages
 npm install -g eslint
@@ -138,7 +139,7 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 
 ```bash
 # Using pacman and AUR
-sudo pacman -S neovim ripgrep go nodejs npm luarocks xclip docker docker-compose shellcheck shfmt
+sudo pacman -S neovim ripgrep fd go nodejs npm luarocks xclip docker docker-compose shellcheck shfmt
 
 # Install PowerShell from AUR
 yay -S powershell-bin
