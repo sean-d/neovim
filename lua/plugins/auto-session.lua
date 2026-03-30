@@ -70,12 +70,12 @@ return {
     -- Keybindings
     keys = {
       -- Session management under <leader>S
-      { "<leader>Ss", "<cmd>SessionSave<cr>", desc = "Save session" },
-      { "<leader>Sr", "<cmd>SessionRestore<cr>", desc = "Restore session" },
-      { "<leader>Sd", "<cmd>SessionDelete<cr>", desc = "Delete current session" },
-      { "<leader>SD", "<cmd>SessionPurgeOrphaned<cr>", desc = "Delete orphaned sessions" },
-      { "<leader>Sl", "<cmd>SessionSearch<cr>", desc = "List/search sessions" },
-      { "<leader>St", "<cmd>SessionToggleAutoSave<cr>", desc = "Toggle auto-save" },
+      { "<leader>Ss", "<cmd>AutoSession save<cr>", desc = "Save session" },
+      { "<leader>Sr", "<cmd>AutoSession restore<cr>", desc = "Restore session" },
+      { "<leader>Sd", "<cmd>AutoSession delete<cr>", desc = "Delete current session" },
+      { "<leader>SD", "<cmd>AutoSession purge_orphaned<cr>", desc = "Delete orphaned sessions" },
+      { "<leader>Sl", "<cmd>AutoSession search<cr>", desc = "List/search sessions" },
+      { "<leader>St", "<cmd>AutoSession toggle_auto_save<cr>", desc = "Toggle auto-save" },
       { "<leader>SL", "<cmd>LspStart<cr>", desc = "Start LSP (fix session restore)" },
     },
     
