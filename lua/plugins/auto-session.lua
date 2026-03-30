@@ -4,15 +4,15 @@ return {
     lazy = false, -- Load immediately for auto-restore
     opts = {
       -- Basic behavior
-      auto_session_enabled = true,
-      auto_save_enabled = true,
-      auto_restore_enabled = true,
-      
+      enabled = true,
+      auto_save = true,
+      auto_restore = true,
+
       -- Save session every 30 seconds (not on every BufLeave)
       auto_save_interval = 30000,
-      
+
       -- Don't create sessions for these directories
-      auto_session_suppress_dirs = {
+      suppressed_dirs = {
         "~/",
         "~/Downloads",
         "~/Desktop",
@@ -20,9 +20,9 @@ return {
         "/tmp",
         "/",
       },
-      
+
       -- Don't restore these buffer types
-      bypass_session_save_file_types = {
+      bypass_save_filetypes = {
         "netrw",
         "dashboard",
         "help",
@@ -49,7 +49,7 @@ return {
       -- Don't show session picker on startup
       session_lens = {
         load_on_setup = false,
-        theme_conf = { border = true },
+        picker_opts = { border = true },
         previewer = false,
       },
       

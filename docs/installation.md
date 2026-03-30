@@ -13,7 +13,7 @@ Complete installation and setup guide for this Neovim configuration.
 
 The following tools are needed for full functionality:
 
-- **Neovim**>= 0.9.0
+- **Neovim** >= 0.12.0
 - **Git** - Plugin management and version control
 - **ripgrep** - Fast searching with `<leader>/`
 - **fd** - Fast file finding (used by fuzzy finders)

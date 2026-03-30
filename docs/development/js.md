@@ -144,7 +144,7 @@ For projects where you want Volar to handle all TypeScript checking:
 
 Key points from community discussions:
 - Many users prefer Volar's takeover mode for Vue projects
-- Inlay hints require Neovim 0.10.0+
+- Inlay hints require Neovim 0.12.0+
 - Some users report better performance with typescript-tools.nvim than standard tsserver
 
 ## Formatting

@@ -9,6 +9,9 @@ vim.opt.showtabline = 0
 -- Neovim options
 local opt = vim.opt
 
+-- Session options (localoptions required for filetype/highlighting after restore)
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- UI
 opt.number = true              -- Show line numbers
 opt.relativenumber = true      -- Relative line numbers

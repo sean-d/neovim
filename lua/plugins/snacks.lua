@@ -131,6 +131,7 @@ return {
         },
       },
       picker = {
+        ui_select = true, -- use Snacks.picker for vim.ui.select
         -- Show hidden and ignored files by default
         hidden = true,
         ignored = true,
