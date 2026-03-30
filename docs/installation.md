@@ -17,6 +17,7 @@ The following tools are needed for full functionality:
 - **Git** - Plugin management and version control
 - **ripgrep** - Fast searching with `<leader>/`
 - **fd** - Fast file finding (used by fuzzy finders)
+- **tree-sitter-cli** - Compiles treesitter parsers from source
 - **Node.js** - LSP servers and markdown preview
 - **LuaRocks** - Lua dependencies
 - **Docker** - Containerized development with `<leader>cd*`
@@ -40,7 +41,7 @@ All prerequisites are installed by the platform-specific commands below.
 brew install --cask docker
 
 # Install other tools
-brew install neovim ripgrep fd lazygit lazydocker go node luarocks pngpaste shellcheck shfmt
+brew install neovim ripgrep fd tree-sitter-cli lazygit lazydocker go node luarocks pngpaste shellcheck shfmt
 
 # Install global npm packages
 npm install -g eslint
@@ -92,6 +93,7 @@ sudo usermod -aG docker $USER
 
 # Install core dependencies
 sudo apt install neovim ripgrep fd-find golang nodejs npm luarocks shellcheck shfmt
+npm install -g tree-sitter-cli
 
 # Install global npm packages
 npm install -g eslint
@@ -135,27 +137,6 @@ rm lazygit.tar.gz lazygit
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 ```
 
-### Install on Arch Linux
-
-```bash
-# Using pacman and AUR
-sudo pacman -S neovim ripgrep fd go nodejs npm luarocks xclip docker docker-compose shellcheck shfmt
-
-# Install PowerShell from AUR
-yay -S powershell-bin
-
-# Install UV for Python
-curl -LsSf https://astral.sh/uv/install.sh | sh
-source $HOME/.local/bin/env
-
-# Enable and start Docker service
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo usermod -aG docker $USER
-
-# Install other AUR packages
-yay -S lazygit lazydocker pngpaste
-```
 
 ## Installation
 

@@ -37,7 +37,7 @@ return {
       end
 
       -- Custom Catppuccin theme with proper colors
-      local custom_catppuccin = require("lualine.themes.catppuccin")
+      local custom_catppuccin = require("lualine.themes.catppuccin-macchiato")
       -- Override the blue with Catppuccin mauve
       custom_catppuccin.normal.a.bg = "#cba6f7"
       custom_catppuccin.normal.b.fg = "#cad3f5"

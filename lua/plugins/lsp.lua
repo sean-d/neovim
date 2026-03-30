@@ -436,11 +436,12 @@ return {
         
       }
 
-      -- Setup servers
+      -- Setup servers using the new vim.lsp.config API (lspconfig v2+)
       for server, config in pairs(servers) do
         config.capabilities = capabilities
-        require("lspconfig")[server].setup(config)
+        vim.lsp.config(server, config)
       end
+      vim.lsp.enable(vim.tbl_keys(servers))
       
       -- Note: rust_analyzer is handled by rustaceanvim plugin, not here
     end,
