@@ -4,70 +4,49 @@ return {
     build = ":TSUpdate",
     event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    opts = {
-      ensure_installed = {
-        "bash",
-        "go",
-        "gomod",
-        "gosum",
-        "gowork",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "luadoc",
-        "luap",
-        "markdown",
-        "markdown_inline",
-        "query",
-        "regex",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "xml",
-        "yaml",
-        "vue",
-        "css",
-        "scss",
-        "jsdoc",
-      },
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = {
-        enable = true,
-        disable = { "python" },
-      },
-      fold = {
-        enable = true,
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
-      textobjects = {
-        move = {
-          enable = true,
-          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
-          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
-          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
-        },
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+    config = function()
+      -- New API: setup() only accepts install_dir
+      require("nvim-treesitter").setup()
+
+      -- Install parsers that are not yet installed
+      local ensure_installed = {
+        "bash", "go", "gomod", "gosum", "gowork", "html",
+        "javascript", "json", "lua", "luadoc", "luap",
+        "markdown", "markdown_inline", "query", "regex",
+        "toml", "tsx", "typescript", "vim", "vimdoc",
+        "xml", "yaml", "vue", "css", "scss", "jsdoc",
+      }
+      local installed = require("nvim-treesitter.config").get_installed()
+      local to_install = vim.tbl_filter(function(lang)
+        return not vim.tbl_contains(installed, lang)
+      end, ensure_installed)
+      if #to_install > 0 then
+        require("nvim-treesitter.install").install(to_install)
+      end
+
+      -- Enable treesitter highlighting (replaces the old highlight module)
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
+
+      -- Enable treesitter indentation (replaces the old indent module)
+      -- Skip python as it has issues with treesitter indent
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "*",
+        callback = function()
+          if vim.bo.filetype ~= "python" then
+            local ok = pcall(vim.treesitter.get_parser, 0)
+            if ok then
+              vim.opt_local.indentexpr = "v:lua.require('nvim-treesitter').indentexpr()"
+            end
+          end
+        end,
+      })
     end,
   },
-  
+
   -- Show context of the current function
   {
     "nvim-treesitter/nvim-treesitter-context",
