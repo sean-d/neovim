@@ -19,7 +19,6 @@ The following tools are needed for full functionality:
 - **fd** - Fast file finding (used by fuzzy finders)
 - **tree-sitter-cli** - Compiles treesitter parsers from source
 - **Node.js** - LSP servers and markdown preview
-- **LuaRocks** - Lua dependencies
 - **Docker** - Containerized development with `<leader>cd*`
 - **docker-compose** - Multi-container applications
 - **lazygit** - Git UI with `<leader>gg`
@@ -41,7 +40,7 @@ All prerequisites are installed by the platform-specific commands below.
 brew install --cask docker
 
 # Install other tools
-brew install neovim ripgrep fd tree-sitter-cli lazygit lazydocker go node luarocks pngpaste shellcheck shfmt
+brew install neovim ripgrep fd tree-sitter-cli lazygit lazydocker go node pngpaste shellcheck shfmt
 
 # Install global npm packages
 npm install -g eslint
@@ -73,13 +72,12 @@ lazygit --version
 lazydocker --version
 go version
 node --version
-luarocks --version
 pwsh --version
 python3 --version
 uv --version
 ```
 
-### Install on Ubuntu/Debian
+### Install on Debian (could work on Ubuntu too)
 
 ```bash
 # Update package list
@@ -92,7 +90,7 @@ sudo usermod -aG docker $USER
 # Log out and back in for group changes to take effect
 
 # Install core dependencies
-sudo apt install neovim ripgrep fd-find golang nodejs npm luarocks shellcheck shfmt
+sudo apt install neovim ripgrep fd-find golang nodejs npm shellcheck shfmt
 npm install -g tree-sitter-cli
 
 # Install global npm packages
