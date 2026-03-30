@@ -63,9 +63,9 @@ See individual language documentation for complete keybinding lists.
 ### Mason Package Manager
 LSP servers, DAP adapters, and tools are managed via Mason:
 ```vim
-:Mason                 " Open Mason UI
+:Mason " Open Mason UI
 :MasonInstall <server> " Install specific server
-:MasonUpdate          " Update installed packages
+:MasonUpdate " Update installed packages
 ```
 
 ### Auto-installed Servers
@@ -76,9 +76,9 @@ The following are automatically installed:
 
 ### Checking Server Status
 ```vim
-:LspInfo      " Show active LSP servers
-:LspLog       " View LSP communication logs
-:checkhealth  " Verify LSP setup
+:LspInfo " Show active LSP servers
+:LspLog " View LSP communication logs
+:checkhealth " Verify LSP setup
 ```
 
 ## Adding Language Support
@@ -130,7 +130,7 @@ Many language commands automatically detect and use Docker:
 
 For tools that work across all languages, see:
 - [Docker Integration](docker.md) - Container-based development
-- [Database Tools](database.md) - SQL development 
+- [Database Tools](database.md) - SQL development
 - [Debugging (DAP)](debugging.md) - Debug configuration details
 - [Trouble](../trouble.md) - Enhanced diagnostics navigation
 - [REST API Testing](../rest-api.md) - API development tools

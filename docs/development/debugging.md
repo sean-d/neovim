@@ -56,35 +56,35 @@ Coming soon:
 ### 1. Set Breakpoints
 Click in the gutter or press `<leader>db` on any line.
 
-Breakpoints appear as red dots: 🔴
+Breakpoints appear as red dots:
 
 ### 2. Start Debugging
 For each language:
 ```vim
 " Go
-<leader>dgoD    " Debug main package
-<leader>dgoX    " Debug test under cursor
+<leader>dgoD " Debug main package
+<leader>dgoX " Debug test under cursor
 
 " Python
-<leader>dpyD    " Debug current file
+<leader>dpyD " Debug current file
 
 " JavaScript/TypeScript
-<leader>djsD    " Debug current file
-<leader>djsA    " Attach to Node process
+<leader>djsD " Debug current file
+<leader>djsA " Attach to Node process
 
 " Rust
-<leader>drsx    " Debug current target
+<leader>drsx " Debug current target
 
 " PHP
-<leader>dphD    " Debug current file
+<leader>dphD " Debug current file
 ```
 
 ### 3. Control Execution
 Once debugging starts:
-- **Continue** (`<leader>dc`) - Run to next breakpoint
-- **Step Over** (`<leader>ds`) - Execute current line
-- **Step Into** (`<leader>di`) - Enter function calls
-- **Step Out** (`<leader>do`) - Exit current function
+- **Continue**(`<leader>dc`) - Run to next breakpoint
+- **Step Over**(`<leader>ds`) - Execute current line
+- **Step Into**(`<leader>di`) - Enter function calls
+- **Step Out**(`<leader>do`) - Exit current function
 
 ### 4. Inspect Variables
 - Hover over variables to see values
@@ -133,8 +133,8 @@ require('dap').set_exception_breakpoints({"raised", "uncaught"})
 During debugging, variable values appear inline:
 ```go
 func example() {
-    x := 42      // x: 42
-    y := "hello" // y: "hello"
+ x := 42 // x: 42
+ y := "hello" // y: "hello"
 }
 ```
 
@@ -204,13 +204,13 @@ Add custom debug configurations:
 ```lua
 local dap = require('dap')
 dap.configurations.go = {
-  {
-    type = 'go',
-    name = 'Debug with flags',
-    request = 'launch',
-    program = '${file}',
-    buildFlags = '-tags=integration'
-  }
+ {
+ type = 'go',
+ name = 'Debug with flags',
+ request = 'launch',
+ program = '${file}',
+ buildFlags = '-tags=integration'
+ }
 }
 ```
 

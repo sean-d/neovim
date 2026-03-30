@@ -1,7 +1,6 @@
 [book]
-authors = ["Your Name"]
+authors = ["sean-d"]
 language = "en"
-multilingual = false
 src = "docs"
 title = "Neovim Configuration Documentation"
 
@@ -11,9 +10,9 @@ build-dir = "docs/book"
 [output.html]
 default-theme = "rust"
 preferred-dark-theme = "ayu"
-git-repository-url = "https://github.com/yourusername/nvim-config"
-edit-url-template = "https://github.com/yourusername/nvim-config/edit/main/{path}"
-site-url = "https://yourusername.github.io/nvim-config/"
+git-repository-url = "https://github.com/sean-d/neovim"
+edit-url-template = "https://github.com/sean-d/neovim/edit/main/{path}"
+site-url = "https://sean-d.github.io/neovim/"
 additional-css = ["theme/custom.css"]
 
 [output.html.playground]

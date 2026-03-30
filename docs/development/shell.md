@@ -14,7 +14,7 @@ Full language support for shell scripting including:
 
 ## Language Server
 
-**bash-language-server** (bashls) provides:
+**bash-language-server**(bashls) provides:
 - Auto-completion for commands, variables, functions, and file paths
 - Hover documentation for built-in commands
 - Go to definition for functions and variables
@@ -28,11 +28,11 @@ Glob pattern: `*@(.sh|.inc|.bash|.zsh|.command)`
 
 ### Syntax Support
 - Full syntax highlighting for:
-  - Variables and expansions
-  - Functions and control structures
-  - Here documents
-  - Command substitution
-  - Arrays and associative arrays
+ - Variables and expansions
+ - Functions and control structures
+ - Here documents
+ - Command substitution
+ - Arrays and associative arrays
 
 ### Diagnostics
 The LSP warns about common issues:
@@ -79,12 +79,12 @@ Shell commands use the `<leader>dzs` prefix (zsh/shell):
 ### Required Tools
 ```bash
 # Install formatting tool
-brew install shfmt        # macOS
-sudo apt install shfmt    # Ubuntu/Debian
+brew install shfmt # macOS
+sudo apt install shfmt # Ubuntu/Debian
 
 # Install linting tool
-brew install shellcheck   # macOS
-sudo apt install shellcheck  # Ubuntu/Debian
+brew install shellcheck # macOS
+sudo apt install shellcheck # Ubuntu/Debian
 ```
 
 ### Auto-installed Components
@@ -95,7 +95,7 @@ sudo apt install shellcheck  # Ubuntu/Debian
 ### Best Practices
 ```bash
 #!/bin/bash
-set -euo pipefail  # Exit on error, undefined vars, pipe failures
+set -euo pipefail # Exit on error, undefined vars, pipe failures
 
 # Always quote variables
 file_path="$HOME/documents"
@@ -103,23 +103,23 @@ file_path="$HOME/documents"
 
 # Use shellcheck directives when needed
 # shellcheck disable=SC2086
-command $unquoted_var  # Intentionally unquoted
+command $unquoted_var # Intentionally unquoted
 ```
 
 ### Functions
 ```bash
 # Good function style
 process_file() {
-    local file=$1
-    local output=${2:-/tmp/output}
-    
-    if [[ ! -f "$file" ]]; then
-        echo "Error: File not found" >&2
-        return 1
-    fi
-    
-    # Process the file
-    grep -v '^#' "$file" > "$output"
+ local file=$1
+ local output=${2:-/tmp/output}
+
+ if [[ ! -f "$file" ]]; then
+ echo "Error: File not found" >&2
+ return 1
+ fi
+
+ # Process the file
+ grep -v '^#' "$file" > "$output"
 }
 ```
 
@@ -128,14 +128,14 @@ process_file() {
 # Indexed arrays
 declare -a fruits=("apple" "banana" "orange")
 for fruit in "${fruits[@]}"; do
-    echo "$fruit"
+ echo "$fruit"
 done
 
 # Associative arrays (Bash 4+)
 declare -A colors=(
-    ["red"]="#FF0000"
-    ["green"]="#00FF00"
-    ["blue"]="#0000FF"
+ ["red"]="#FF0000"
+ ["green"]="#00FF00"
+ ["blue"]="#0000FF"
 )
 echo "Red is ${colors[red]}"
 ```
@@ -152,8 +152,8 @@ echo "Red is ${colors[red]}"
 ### Debugging
 ```bash
 # Enable debug mode
-set -x  # Print commands as executed
-set -v  # Print lines as read
+set -x # Print commands as executed
+set -v # Print lines as read
 
 # Or run with debug
 bash -x script.sh
@@ -178,10 +178,10 @@ For inline shellcheck warnings, additional setup would be required (e.g., none-l
 Control specific warnings with directives:
 ```bash
 # shellcheck disable=SC2034
-unused_var="value"  # Intentionally unused
+unused_var="value" # Intentionally unused
 
 # shellcheck disable=SC2086
-command $unquoted_var  # Intentionally unquoted
+command $unquoted_var # Intentionally unquoted
 ```
 
 ## Zsh Specific Features
@@ -210,8 +210,8 @@ IFS=$'\n\t'
 ### Error Handling
 ```bash
 error_exit() {
-    echo "Error: $1" >&2
-    exit "${2:-1}"
+ echo "Error: $1" >&2
+ exit "${2:-1}"
 }
 
 # Usage
@@ -230,7 +230,7 @@ command || error_exit "Command failed" 2
 ```bash
 # Bad
 file=my file.txt
-touch $file  # Creates two files!
+touch $file # Creates two files!
 
 # Good
 file="my file.txt"

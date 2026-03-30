@@ -4,14 +4,14 @@ Comprehensive Rust development environment powered by rustaceanvim (version 5+) 
 
 ## Features
 
-- **Full LSP Support** via rust-analyzer
-- **Integrated Testing** with beautiful output windows
-- **Clippy Integration** for advanced linting
-- **Debugging** with CodeLLDB
-- **Cargo Management** build, run, test, and more
-- **Format on Save** with rustfmt
-- **Macro Expansion** view expanded macros
-- **Code Generation** derive macros, trait implementations
+- **Full LSP Support**via rust-analyzer
+- **Integrated Testing**with beautiful output windows
+- **Clippy Integration**for advanced linting
+- **Debugging**with CodeLLDB
+- **Cargo Management**build, run, test, and more
+- **Format on Save**with rustfmt
+- **Macro Expansion**view expanded macros
+- **Code Generation**derive macros, trait implementations
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ cargo --version
 
 # Install additional tools
 rustup component add rust-src
-rustup component add rust-analyzer  # Also managed by rustaceanvim
+rustup component add rust-analyzer # Also managed by rustaceanvim
 rustup component add clippy
 rustup component add rustfmt
 ```
@@ -168,10 +168,10 @@ Clippy runs with `cargo clippy -- -W clippy::all` and provides warnings for:
 2. Show debug targets: `<leader>drsD`
 3. Select and run target
 4. Use debug controls:
-   - Continue: `<leader>dc`
-   - Step over: `<leader>dO`
-   - Step into: `<leader>di`
-   - Step out: `<leader>do`
+ - Continue: `<leader>dc`
+ - Step over: `<leader>dO`
+ - Step into: `<leader>di`
+ - Step out: `<leader>do`
 5. View variables in debug UI
 
 ### Debug Current Target
@@ -236,7 +236,7 @@ All Rust development commands that produce output use custom floating windows:
 - Syntax highlighting for Rust output
 - Scrollable content with `<C-d>`/`<C-u>`
 - Easy dismissal with `q`, `<Esc>`, or `<C-c>`
-- Status indicators (✅ success, ❌ failure)
+- Status indicators ( success, failure)
 - Footer showing "Press q to close"
 
 ## Additional Features
@@ -282,9 +282,9 @@ rustaceanvim automatically detects and handles Cargo workspaces:
 
 ### rust-analyzer not starting
 ```vim
-:LspInfo          " Check if rust-analyzer is running
-:LspLog           " View error logs
-:Mason            " Reinstall rust-analyzer
+:LspInfo " Check if rust-analyzer is running
+:LspLog " View error logs
+:Mason " Reinstall rust-analyzer
 ```
 
 ### Tests not running
@@ -294,8 +294,8 @@ rustaceanvim automatically detects and handles Cargo workspaces:
 
 ### Debugging not working
 ```vim
-:checkhealth      " Check overall health
-:Mason            " View/update Mason packages (codelldb is auto-installed)
+:checkhealth " Check overall health
+:Mason " View/update Mason packages (codelldb is auto-installed)
 ```
 
 CodeLLDB paths on macOS:

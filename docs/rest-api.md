@@ -10,7 +10,7 @@ Kulala provides HTTP request testing with:
 - Response viewing in horizontal split
 - Request history and replay
 - Import/export from cURL
-- Status icons (⏳ loading, ✅ done, ❌ error)
+- Status icons ( loading, done, error)
 
 ## File Format
 
@@ -29,8 +29,8 @@ POST https://api.example.com/users
 Content-Type: application/json
 
 {
-  "name": "John Doe",
-  "email": "john@example.com"
+ "name": "John Doe",
+ "email": "john@example.com"
 }
 ```
 
@@ -92,7 +92,7 @@ POST https://api.example.com/resource
 Content-Type: application/json
 
 {
-  "key": "value"
+ "key": "value"
 }
 ```
 
@@ -122,14 +122,14 @@ POST https://api.example.com/users
 Content-Type: application/json
 
 {
-  "name": "Test User"
+ "name": "Test User"
 }
 ```
 
 Status icons appear above requests:
-- ⏳ Request in progress
-- ✅ Request completed successfully
-- ❌ Request failed
+-  Request in progress
+- Request completed successfully
+- Request failed
 
 ## Response Handling
 
@@ -193,8 +193,8 @@ POST {{base_url}}/api/items
 Content-Type: application/json
 
 {
-  "name": "New Item",
-  "price": 29.99
+ "name": "New Item",
+ "price": 29.99
 }
 
 ###
@@ -205,8 +205,8 @@ PUT {{base_url}}/api/items/123
 Content-Type: application/json
 
 {
-  "name": "Updated Item",
-  "price": 39.99
+ "name": "Updated Item",
+ "price": 39.99
 }
 
 ###
@@ -223,7 +223,7 @@ POST {{graphql_endpoint}}
 Content-Type: application/json
 
 {
-  "query": "{ users { id name email } }"
+ "query": "{ users { id name email } }"
 }
 ```
 

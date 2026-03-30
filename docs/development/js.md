@@ -14,38 +14,38 @@ This guide covers the complete setup for JavaScript/TypeScript development in Ne
 - Modern TypeScript plugin with better performance than standard tsserver
 - Repository: https://github.com/pmizio/typescript-tools.nvim
 - Features:
-  - Faster than nvim-typescript
-  - Better inlay hints support
-  - Improved diagnostics
-  - Native Neovim integration
+ - Faster than nvim-typescript
+ - Better inlay hints support
+ - Improved diagnostics
+ - Native Neovim integration
 
 ```lua
 {
-  "pmizio/typescript-tools.nvim",
-  dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  opts = {
-    settings = {
-      -- spawn additional tsserver instance to calculate diagnostics on it
-      separate_diagnostic_server = true,
-      -- "change"|"insert_leave" determine when the client asks the server about diagnostic
-      publish_diagnostic_on = "insert_leave",
-      -- specify a list of plugins to load by tsserver
-      tsserver_plugins = {},
-      -- described below
-      tsserver_format_options = {},
-      tsserver_file_preferences = {},
-      -- mirror of VSCode's `typescript.suggest.completeFunctionCalls`
-      complete_function_calls = false,
-      include_completions_with_insert_text = true,
-      -- CodeLens
-      code_lens = "off", -- "off" | "all" | "implementations_only" | "references_only"
-      -- Inlay Hints
-      jsx_close_tag = {
-        enable = true,
-        filetypes = { "javascriptreact", "typescriptreact" },
-      }
-    },
-  },
+ "pmizio/typescript-tools.nvim",
+ dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+ opts = {
+ settings = {
+ -- spawn additional tsserver instance to calculate diagnostics on it
+ separate_diagnostic_server = true,
+ -- "change"|"insert_leave" determine when the client asks the server about diagnostic
+ publish_diagnostic_on = "insert_leave",
+ -- specify a list of plugins to load by tsserver
+ tsserver_plugins = {},
+ -- described below
+ tsserver_format_options = {},
+ tsserver_file_preferences = {},
+ -- mirror of VSCode's `typescript.suggest.completeFunctionCalls`
+ complete_function_calls = false,
+ include_completions_with_insert_text = true,
+ -- CodeLens
+ code_lens = "off", -- "off" | "all" | "implementations_only" | "references_only"
+ -- Inlay Hints
+ jsx_close_tag = {
+ enable = true,
+ filetypes = { "javascriptreact", "typescriptreact" },
+ }
+ },
+ },
 }
 ```
 
@@ -59,17 +59,17 @@ Direct LSP integration (no need for eslint_d):
 
 ```lua
 require'lspconfig'.eslint.setup({
-  settings = {
-    packageManager = 'npm', -- or 'yarn', 'pnpm'
-    format = true, -- Enable formatting
-  },
-  on_attach = function(client, bufnr)
-    -- Auto-fix on save
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      command = "EslintFixAll",
-    })
-  end,
+ settings = {
+ packageManager = 'npm', -- or 'yarn', 'pnpm'
+ format = true, -- Enable formatting
+ },
+ on_attach = function(client, bufnr)
+ -- Auto-fix on save
+ vim.api.nvim_create_autocmd("BufWritePre", {
+ buffer = bufnr,
+ command = "EslintFixAll",
+ })
+ end,
 })
 ```
 
@@ -79,9 +79,9 @@ Fast, Rust-based formatter and linter:
 
 ```lua
 require'lspconfig'.biome.setup({
-  -- Biome can replace both ESLint and Prettier
-  single_file_support = true,
-  root_dir = require'lspconfig'.util.root_pattern('biome.json', 'biome.jsonc'),
+ -- Biome can replace both ESLint and Prettier
+ single_file_support = true,
+ root_dir = require'lspconfig'.util.root_pattern('biome.json', 'biome.jsonc'),
 })
 ```
 
@@ -98,25 +98,25 @@ local vue_language_server_path = mason_registry.get_package('vue-language-server
 
 -- Configure TypeScript to understand Vue files
 require'lspconfig'.ts_ls.setup {
-  init_options = {
-    plugins = {
-      {
-        name = '@vue/typescript-plugin',
-        location = vue_language_server_path,
-        languages = { 'vue' },
-      },
-    },
-  },
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+ init_options = {
+ plugins = {
+ {
+ name = '@vue/typescript-plugin',
+ location = vue_language_server_path,
+ languages = { 'vue' },
+ },
+ },
+ },
+ filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 }
 
 -- Configure Vue language server
 require'lspconfig'.volar.setup {
-  -- Takeover mode: Volar handles both .vue and .ts files
-  -- filetypes = { 'vue', 'typescript', 'javascript' },
-  
-  -- Standard mode: Only handles .vue files
-  filetypes = { 'vue' },
+ -- Takeover mode: Volar handles both .vue and .ts files
+ -- filetypes = { 'vue', 'typescript', 'javascript' },
+
+ -- Standard mode: Only handles .vue files
+ filetypes = { 'vue' },
 }
 ```
 
@@ -127,11 +127,11 @@ For projects where you want Volar to handle all TypeScript checking:
 1. Create `.neoconf.json` in your project root:
 ```json
 {
-  "lspconfig": {
-    "tsserver": {
-      "disable": true
-    }
-  }
+ "lspconfig": {
+ "tsserver": {
+ "disable": true
+ }
+ }
 }
 ```
 
@@ -153,25 +153,25 @@ Key points from community discussions:
 
 ```lua
 {
-  'stevearc/conform.nvim',
-  opts = {
-    formatters_by_ft = {
-      javascript = { "prettier" },
-      javascriptreact = { "prettier" },
-      typescript = { "prettier" },
-      typescriptreact = { "prettier" },
-      vue = { "prettier" },
-      html = { "prettier" },
-      css = { "prettier" },
-      json = { "prettier" },
-      yaml = { "prettier" },
-      markdown = { "prettier" },
-    },
-    format_on_save = {
-      timeout_ms = 500,
-      lsp_fallback = true,
-    },
-  },
+ 'stevearc/conform.nvim',
+ opts = {
+ formatters_by_ft = {
+ javascript = { "prettier" },
+ javascriptreact = { "prettier" },
+ typescript = { "prettier" },
+ typescriptreact = { "prettier" },
+ vue = { "prettier" },
+ html = { "prettier" },
+ css = { "prettier" },
+ json = { "prettier" },
+ yaml = { "prettier" },
+ markdown = { "prettier" },
+ },
+ format_on_save = {
+ timeout_ms = 500,
+ lsp_fallback = true,
+ },
+ },
 }
 ```
 
@@ -192,21 +192,21 @@ Complete debugging setup for Node.js, Chrome, and Electron:
 ```lua
 -- Install debugger
 {
-  "mxsdev/nvim-dap-vscode-js",
-  dependencies = {
-    "mfussenegger/nvim-dap",
-    {
-      "microsoft/vscode-js-debug",
-      opt = true,
-      run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-    }
-  },
-  config = function()
-    require("dap-vscode-js").setup({
-      debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
-      adapters = { 'chrome', 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost', 'node', 'chrome' },
-    })
-  end,
+ "mxsdev/nvim-dap-vscode-js",
+ dependencies = {
+ "mfussenegger/nvim-dap",
+ {
+ "microsoft/vscode-js-debug",
+ opt = true,
+ run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+ }
+ },
+ config = function()
+ require("dap-vscode-js").setup({
+ debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
+ adapters = { 'chrome', 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost', 'node', 'chrome' },
+ })
+ end,
 }
 ```
 
@@ -216,44 +216,44 @@ Complete debugging setup for Node.js, Chrome, and Electron:
 local js_based_languages = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" }
 
 for _, language in ipairs(js_based_languages) do
-  require("dap").configurations[language] = {
-    -- Node.js
-    {
-      type = "pwa-node",
-      request = "launch",
-      name = "Launch file",
-      program = "${file}",
-      cwd = "${workspaceFolder}",
-    },
-    {
-      type = "pwa-node",
-      request = "attach",
-      name = "Attach",
-      processId = require'dap.utils'.pick_process,
-      cwd = "${workspaceFolder}",
-    },
-    -- Chrome/Electron
-    {
-      type = "pwa-chrome",
-      request = "launch",
-      name = "Start Chrome & Debug",
-      url = "http://localhost:8080",
-      webRoot = "${workspaceFolder}",
-      userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir"
-    },
-    -- Jest
-    {
-      type = "pwa-node",
-      request = "launch",
-      name = "Jest: current file",
-      program = "${workspaceFolder}/node_modules/.bin/jest",
-      args = { "${fileBasename}", "--coverage=false" },
-      rootPath = "${workspaceFolder}",
-      cwd = "${workspaceFolder}",
-      console = "integratedTerminal",
-      internalConsoleOptions = "neverOpen",
-    }
-  }
+ require("dap").configurations[language] = {
+ -- Node.js
+ {
+ type = "pwa-node",
+ request = "launch",
+ name = "Launch file",
+ program = "${file}",
+ cwd = "${workspaceFolder}",
+ },
+ {
+ type = "pwa-node",
+ request = "attach",
+ name = "Attach",
+ processId = require'dap.utils'.pick_process,
+ cwd = "${workspaceFolder}",
+ },
+ -- Chrome/Electron
+ {
+ type = "pwa-chrome",
+ request = "launch",
+ name = "Start Chrome & Debug",
+ url = "http://localhost:8080",
+ webRoot = "${workspaceFolder}",
+ userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir"
+ },
+ -- Jest
+ {
+ type = "pwa-node",
+ request = "launch",
+ name = "Jest: current file",
+ program = "${workspaceFolder}/node_modules/.bin/jest",
+ args = { "${fileBasename}", "--coverage=false" },
+ rootPath = "${workspaceFolder}",
+ cwd = "${workspaceFolder}",
+ console = "integratedTerminal",
+ internalConsoleOptions = "neverOpen",
+ }
+ }
 end
 ```
 
@@ -275,33 +275,33 @@ end
 
 - Configure separate tsconfig for main/renderer processes
 - Use different debug configurations:
-  - `pwa-node` for main process
-  - `pwa-chrome` for renderer process
+ - `pwa-node` for main process
+ - `pwa-chrome` for renderer process
 - Set up proper source maps for debugging
 
 ## Treesitter Configuration
 
 ```lua
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    "javascript",
-    "typescript",
-    "tsx",
-    "vue",
-    "html",
-    "css",
-    "json",
-    "jsdoc",
-  },
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true,
-  },
-  autotag = {
-    enable = true,
-  },
+ ensure_installed = {
+ "javascript",
+ "typescript",
+ "tsx",
+ "vue",
+ "html",
+ "css",
+ "json",
+ "jsdoc",
+ },
+ highlight = {
+ enable = true,
+ },
+ indent = {
+ enable = true,
+ },
+ autotag = {
+ enable = true,
+ },
 }
 ```
 
@@ -317,14 +317,14 @@ require'nvim-treesitter.configs'.setup {
 ### Comparison with WebStorm
 
 **Features Neovim Provides Natively or via Plugins:**
-- ✅ Code completion (LSP)
-- ✅ Go to definition/references (LSP)
-- ✅ Rename refactoring (LSP)
-- ✅ Error highlighting (LSP)
-- ✅ Debugging (nvim-dap)
-- ✅ Git integration (fugitive/gitsigns)
-- ✅ File explorer (neo-tree)
-- ✅ Fuzzy finding (telescope)
+- Code completion (LSP)
+- Go to definition/references (LSP)
+- Rename refactoring (LSP)
+- Error highlighting (LSP)
+- Debugging (nvim-dap)
+- Git integration (fugitive/gitsigns)
+- File explorer (neo-tree)
+- Fuzzy finding (telescope)
 
 **Features That Are Different:**
 - Project-wide refactoring: More limited, but LSP rename works well
@@ -381,46 +381,46 @@ vim.keymap.set('n', '<leader>dju', ':!npm update<CR>', { desc = 'Update dependen
 ## Tips for Electron Development
 
 1. **Project Structure:**
-   ```
-   ├── src/
-   │   ├── main/          # Main process (Node.js)
-   │   ├── renderer/      # Renderer process (Browser)
-   │   └── preload/       # Preload scripts
-   ├── tsconfig.json      # Base config
-   ├── tsconfig.main.json # Main process config
-   └── tsconfig.renderer.json # Renderer config
-   ```
+ ```
+  src/
+   main/ # Main process (Node.js)
+   renderer/ # Renderer process (Browser)
+   preload/ # Preload scripts
+  tsconfig.json # Base config
+  tsconfig.main.json # Main process config
+  tsconfig.renderer.json # Renderer config
+ ```
 
 2. **Debugging Setup:**
-   - Main process: Use Node.js debug configuration
-   - Renderer process: Use Chrome debug configuration with proper webRoot
+ - Main process: Use Node.js debug configuration
+ - Renderer process: Use Chrome debug configuration with proper webRoot
 
 3. **Type Safety:**
-   - Use proper IPC typing with TypeScript
-   - Share types between main and renderer via a common types file
+ - Use proper IPC typing with TypeScript
+ - Share types between main and renderer via a common types file
 
 ## Common Issues and Solutions
 
 ### Vue + TypeScript Issues
 
 1. **Types not working in .vue files:**
-   - Ensure @vue/typescript-plugin is properly configured
-   - Check that TypeScript server includes 'vue' in filetypes
+ - Ensure @vue/typescript-plugin is properly configured
+ - Check that TypeScript server includes 'vue' in filetypes
 
 2. **Slow performance:**
-   - Consider using takeover mode
-   - Try typescript-tools.nvim instead of standard tsserver
+ - Consider using takeover mode
+ - Try typescript-tools.nvim instead of standard tsserver
 
 ### General Issues
 
 1. **ESLint not auto-fixing:**
-   - Ensure EslintFixAll autocmd is set up
-   - Check that ESLint LSP has format capability enabled
+ - Ensure EslintFixAll autocmd is set up
+ - Check that ESLint LSP has format capability enabled
 
 2. **Prettier conflicts with LSP formatting:**
-   - Disable LSP formatting when using Prettier
-   - Use conform.nvim to manage formatters
+ - Disable LSP formatting when using Prettier
+ - Use conform.nvim to manage formatters
 
 3. **Debug adapter not working:**
-   - Ensure vscode-js-debug is properly built
-   - Check that adapter paths are correct
+ - Ensure vscode-js-debug is properly built
+ - Check that adapter paths are correct

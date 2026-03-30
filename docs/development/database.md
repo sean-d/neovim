@@ -40,20 +40,20 @@ The database UI opens in a drawer on the right side of your screen, similar to t
 
 ### UI Structure
 ```
-▾ Connections
-  ▸ 🗄️ production_db
-  ▾ 🗄️ development_db
-    ▾ 󰦨 Buffers
-      development.sql
-    ▾  Saved queries
-      user_stats.sql
-      daily_reports.sql
-    ▾  Schemas
-      ▾ public
-        ▾  Tables
-          users
-          orders
-          products
+ Connections
+  production_db
+  development_db
+  󰦨 Buffers
+ development.sql
+  Saved queries
+ user_stats.sql
+ daily_reports.sql
+  Schemas
+  public
+  Tables
+ users
+ orders
+ products
 ```
 
 ## Key Mappings
@@ -61,9 +61,9 @@ The database UI opens in a drawer on the right side of your screen, similar to t
 ### Database Commands
 | Key | Description |
 |-----|-------------|
-| `<leader>Dt` | Toggle database UI drawer 🗄️ |
-| `<leader>Da` | Add new connection 🔌 |
-| `<leader>Df` | Find database buffer 🔍 |
+| `<leader>Dt` | Toggle database UI drawer |
+| `<leader>Da` | Add new connection |
+| `<leader>Df` | Find database buffer |
 
 ### Inside Database UI
 | Key | Description |
@@ -160,7 +160,7 @@ In the database UI:
 
 SQL completion works automatically in `.sql` files:
 - Table names after FROM, JOIN
-- Column names after SELECT, WHERE  
+- Column names after SELECT, WHERE
 - SQL keywords
 - Database-specific functions
 
@@ -191,16 +191,16 @@ When viewing a table in the UI, press `<Enter>` to see quick actions:
 ### 2. Query Organization
 ```
 project/
-├── queries/
-│   ├── reports/
-│   │   ├── daily_sales.sql
-│   │   └── user_activity.sql
-│   ├── maintenance/
-│   │   ├── cleanup_old_data.sql
-│   │   └── optimize_tables.sql
-│   └── migrations/
-│       ├── 001_create_users.sql
-│       └── 002_add_orders.sql
+ queries/
+  reports/
+   daily_sales.sql
+   user_activity.sql
+  maintenance/
+   cleanup_old_data.sql
+   optimize_tables.sql
+  migrations/
+  001_create_users.sql
+  002_add_orders.sql
 ```
 
 ### 3. Development Workflow

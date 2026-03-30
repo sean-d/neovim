@@ -5,34 +5,34 @@ Due to the current state of the Vue language server ecosystem, Vue support in Ne
 ## What Works
 
 ### In `<script>` sections:
-- ✅ Full TypeScript/JavaScript support
-- ✅ Hover information (K)
-- ✅ Go-to-definition (gd)
-- ✅ Auto-completion
-- ✅ Type checking
+- Full TypeScript/JavaScript support
+- Hover information (K)
+- Go-to-definition (gd)
+- Auto-completion
+- Type checking
 
 ### Throughout the file:
-- ✅ Syntax highlighting (Treesitter)
-- ✅ Code formatting (Prettier)
-- ✅ Linting (ESLint with vue plugin)
-- ✅ Tailwind CSS completions
+- Syntax highlighting (Treesitter)
+- Code formatting (Prettier)
+- Linting (ESLint with vue plugin)
+- Tailwind CSS completions
 
 ## What Doesn't Work
 
 ### In `<template>` sections:
-- ❌ Component hover information
-- ❌ Go-to-definition for components
-- ❌ Props auto-completion
-- ❌ Template expression validation
-- ❌ Event handler suggestions
-- ❌ Template type checking
+- Component hover information
+- Go-to-definition for components
+- Props auto-completion
+- Template expression validation
+- Event handler suggestions
+- Template type checking
 
 ### Vue-specific features:
-- ❌ Component auto-import
-- ❌ Props/emits validation in templates
-- ❌ Slot name completion
-- ❌ Directive suggestions
-- ❌ Scoped slots type checking
+- Component auto-import
+- Props/emits validation in templates
+- Slot name completion
+- Directive suggestions
+- Scoped slots type checking
 
 ## Workarounds
 

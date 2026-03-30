@@ -76,7 +76,7 @@ When in picker:
 ## Buffer Navigation
 
 ### Bufferline Features
-Bufferline is **hidden by default** to keep the interface clean. Enable it with `<leader>ub` when you need visual buffer tabs.
+Bufferline is **hidden by default**to keep the interface clean. Enable it with `<leader>ub` when you need visual buffer tabs.
 
 When enabled, buffers appear as tabs at the top with:
 - File type icons
@@ -113,7 +113,7 @@ When enabled, buffers appear as tabs at the top with:
 Pinned buffers:
 - Stay in place when reordering
 - Survive "close others" commands
-- Show a pin icon 📌
+- Show a pin icon
 
 ## Quick Navigation with Harpoon
 
@@ -167,10 +167,10 @@ Lightning-fast cursor movement anywhere visible.
 | `;`/`,` | Repeat last f/F/t/T |
 
 ### Flash Modes
-- **Jump Mode** (`s`) - Jump anywhere
-- **Treesitter Mode** (`S`) - Jump to code structures
-- **Search Mode** (`/`) - Standard search enhanced
-- **Remote Mode** (`r`) - Operate on remote text
+- **Jump Mode**(`s`) - Jump anywhere
+- **Treesitter Mode**(`S`) - Jump to code structures
+- **Search Mode**(`/`) - Standard search enhanced
+- **Remote Mode**(`r`) - Operate on remote text
 
 ## Code Navigation
 

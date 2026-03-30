@@ -71,24 +71,24 @@ ESLint can be configured using either:
 Example `.eslintrc.json` with auto-fixable rules:
 ```json
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
-  },
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "rules": {
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "indent": ["error", 2],
-    "comma-dangle": ["error", "always-multiline"],
-    "no-unused-vars": "warn",
-    "no-console": "off"
-  }
+ "env": {
+ "browser": true,
+ "es2021": true,
+ "node": true
+ },
+ "extends": "eslint:recommended",
+ "parserOptions": {
+ "ecmaVersion": "latest",
+ "sourceType": "module"
+ },
+ "rules": {
+ "quotes": ["error", "single"],
+ "semi": ["error", "always"],
+ "indent": ["error", 2],
+ "comma-dangle": ["error", "always-multiline"],
+ "no-unused-vars": "warn",
+ "no-console": "off"
+ }
 }
 ```
 
@@ -97,11 +97,11 @@ Example `.eslintrc.json` with auto-fixable rules:
 Configure with `.prettierrc` or `.prettierrc.json`:
 ```json
 {
-  "semi": true,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "printWidth": 100
+ "semi": true,
+ "singleQuote": true,
+ "tabWidth": 2,
+ "trailingComma": "es5",
+ "printWidth": 100
 }
 ```
 
@@ -110,15 +110,15 @@ Configure with `.prettierrc` or `.prettierrc.json`:
 TypeScript configuration via `tsconfig.json`:
 ```json
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+ "compilerOptions": {
+ "target": "ES2022",
+ "module": "ESNext",
+ "moduleResolution": "node",
+ "strict": true,
+ "esModuleInterop": true,
+ "skipLibCheck": true,
+ "forceConsistentCasingInFileNames": true
+ }
 }
 ```
 
@@ -141,11 +141,11 @@ Full debugging support is available for JavaScript and TypeScript:
 - Set breakpoints with `<leader>db`
 - Start debugging with `<leader>djsD`
 - Debug controls:
-  - `<leader>dc` - Continue
-  - `<leader>dO` - Step over
-  - `<leader>di` - Step into
-  - `<leader>do` - Step out
-  - `<leader>de` - Evaluate expression
+ - `<leader>dc` - Continue
+ - `<leader>dO` - Step over
+ - `<leader>di` - Step into
+ - `<leader>do` - Step out
+ - `<leader>de` - Evaluate expression
 
 #### TypeScript Debugging
 - Works with project-local TypeScript (no global install needed)
@@ -155,20 +155,20 @@ Full debugging support is available for JavaScript and TypeScript:
 
 #### Browser Debugging (Vue/React)
 
-**Launch Mode** (Recommended):
+**Launch Mode**(Recommended):
 - Start your dev server first (`npm run dev`)
 - Use `<leader>djsD` and select a browser:
-  - "Launch Brave" - Starts new Brave instance with debugging
-  - "Launch Chrome" - Starts new Chrome instance with debugging
-  - "Launch Edge" - Starts new Edge instance with debugging
+ - "Launch Brave" - Starts new Brave instance with debugging
+ - "Launch Chrome" - Starts new Chrome instance with debugging
+ - "Launch Edge" - Starts new Edge instance with debugging
 - Set breakpoints in your source files
 - The browser will launch automatically with debugging enabled
 
-**Attach Mode** (For existing browser sessions):
+**Attach Mode**(For existing browser sessions):
 - First, start your browser with debugging enabled:
-  - Brave: `brave --remote-debugging-port=9222`
-  - Chrome: `google-chrome --remote-debugging-port=9222`
-  - Edge: `microsoft-edge --remote-debugging-port=9222`
+ - Brave: `brave --remote-debugging-port=9222`
+ - Chrome: `google-chrome --remote-debugging-port=9222`
+ - Edge: `microsoft-edge --remote-debugging-port=9222`
 - Start your dev server (`npm run dev`)
 - Use `<leader>djsD` and select "Attach to [Browser]"
 - Set breakpoints in your source files
@@ -183,10 +183,10 @@ Note: Launch mode is easier as it handles everything automatically. Use attach m
 1. Open a test file (`.test.ts`, `.spec.ts`, etc.)
 2. Set breakpoints with `<leader>db` where you want to pause
 3. In a terminal, start the test runner with debugging:
-   ```bash
-   cd ~/your-project
-   node --inspect-brk ./node_modules/.bin/vitest run path/to/test.ts
-   ```
+ ```bash
+ cd ~/your-project
+ node --inspect-brk ./node_modules/.bin/vitest run path/to/test.ts
+ ```
 4. You'll see: `Debugger listening on ws://127.0.0.1:9229/...`
 5. In Neovim, run `<leader>djsA` (attach debugger)
 6. Select "Attach to Port 9229"
@@ -195,7 +195,7 @@ Note: Launch mode is easier as it handles everything automatically. Use attach m
 **Debug Controls**:
 - `<leader>dc` - Continue execution
 - `<leader>dO` - Step over
-- `<leader>di` - Step into  
+- `<leader>di` - Step into
 - `<leader>do` - Step out
 - `<leader>db` - Toggle breakpoint
 - `<leader>de` - Evaluate expression
@@ -204,8 +204,8 @@ Note: Launch mode is easier as it handles everything automatically. Use attach m
 
 ### Formatting vs Linting
 
-- **Formatting** (`<leader>djsf`): Prettier handles code style (spacing, line breaks)
-- **Linting** (`<leader>djsl`): ESLint handles code quality and fixable style rules
+- **Formatting**(`<leader>djsf`): Prettier handles code style (spacing, line breaks)
+- **Linting**(`<leader>djsl`): ESLint handles code quality and fixable style rules
 
 Both can work together:
 1. ESLint fixes code quality issues and some style rules
@@ -213,9 +213,9 @@ Both can work together:
 
 ### Error Handling
 
-- **Syntax errors** must be fixed manually (tools will detect but not auto-fix)
-- **Style issues** are auto-fixed by ESLint and Prettier
-- **Type errors** are shown by TypeScript but don't prevent running
+- **Syntax errors**must be fixed manually (tools will detect but not auto-fix)
+- **Style issues**are auto-fixed by ESLint and Prettier
+- **Type errors**are shown by TypeScript but don't prevent running
 
 ## Package Managers
 
@@ -243,9 +243,9 @@ The configuration automatically detects your package manager:
 Add a `jsconfig.json` to your project:
 ```json
 {
-  "compilerOptions": {
-    "checkJs": false
-  }
+ "compilerOptions": {
+ "checkJs": false
+ }
 }
 ```
 
@@ -277,39 +277,39 @@ The Vue language server ecosystem is currently fragmented:
 ### Vue Project Setup
 
 1. Create a Vue 3 project:
-   ```bash
-   npm create vite@latest my-vue-app -- --template vue-ts
-   ```
+ ```bash
+ npm create vite@latest my-vue-app -- --template vue-ts
+ ```
 
 2. Install required dependencies:
-   ```bash
-   npm install -D @vue/typescript-plugin eslint-plugin-vue
-   ```
+ ```bash
+ npm install -D @vue/typescript-plugin eslint-plugin-vue
+ ```
 
 3. Configure TypeScript (`tsconfig.json`):
-   ```json
-   {
-     "compilerOptions": {
-       // ... other options
-       "plugins": [
-         { "name": "@vue/typescript-plugin" }
-       ]
-     }
-   }
-   ```
+ ```json
+ {
+ "compilerOptions": {
+ // ... other options
+ "plugins": [
+ { "name": "@vue/typescript-plugin" }
+ ]
+ }
+ }
+ ```
 
 4. Configure ESLint (`.eslintrc.json`):
-   ```json
-   {
-     "extends": ["eslint:recommended", "plugin:vue/vue3-essential"],
-     "plugins": ["vue"]
-   }
-   ```
+ ```json
+ {
+ "extends": ["eslint:recommended", "plugin:vue/vue3-essential"],
+ "plugins": ["vue"]
+ }
+ ```
 
 5. Development commands work normally:
-   - `<leader>djsd` - Start Vite dev server
-   - `<leader>djsb` - Build for production
-   - `<leader>djsp` - Preview production build
+ - `<leader>djsd` - Start Vite dev server
+ - `<leader>djsb` - Build for production
+ - `<leader>djsp` - Preview production build
 
 ### How it Works
 - Uses `vtsls` (Visual Studio Code's TypeScript Language Server)

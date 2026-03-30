@@ -97,11 +97,11 @@ Lazygit uses a pink border theme matching the Neovim config.
 
 ### Visual Indicators
 The sign column shows:
-- `▎` - Added lines (green)
-- `▎` - Changed lines (yellow)
-- `▎` - Removed lines (red)
-- `▎` - Top delete (red)
-- `▎` - Untracked files (gray)
+- `` - Added lines (green)
+- `` - Changed lines (yellow)
+- `` - Removed lines (red)
+- `` - Top delete (red)
+- `` - Untracked files (gray)
 
 Signs also show for staged changes with different colors.
 
@@ -116,35 +116,35 @@ After 1 second of inactivity, see:
 
 #### Navigate Changes
 ```vim
-]h  " Next change
-[h  " Previous change
+]h " Next change
+[h " Previous change
 ```
 
 #### Stage/Unstage
 ```vim
-<leader>ghs  " Stage hunk under cursor
-<leader>ghr  " Reset hunk under cursor
-<leader>ghS  " Stage entire file
-<leader>ghR  " Reset entire file
+<leader>ghs " Stage hunk under cursor
+<leader>ghr " Reset hunk under cursor
+<leader>ghS " Stage entire file
+<leader>ghR " Reset entire file
 ```
 
 #### Preview Changes
 ```vim
-<leader>ghp  " Preview hunk in floating window
-<leader>ghd  " Diff against index
+<leader>ghp " Preview hunk in floating window
+<leader>ghd " Diff against index
 ```
 
 ### Virtual Text
 Blame information appears as virtual text:
 ```go
-func main() {  // John Doe, 2 days ago: Add main function
+func main() { // John Doe, 2 days ago: Add main function
 ```
 
 ## Git Browser Integration
 
 `<leader>gB` opens the current file in:
 - GitHub
-- GitLab  
+- GitLab
 - Bitbucket
 - Custom git hosts
 
@@ -155,16 +155,16 @@ Opens at the current line number with permalink to commit.
 ### Diff View
 View changes side-by-side:
 ```vim
-:Gitsigns diffthis              " Diff against index
-:Gitsigns diffthis ~1           " Diff against previous commit
-:Gitsigns toggle_word_diff      " Word-level diff
+:Gitsigns diffthis " Diff against index
+:Gitsigns diffthis ~1 " Diff against previous commit
+:Gitsigns toggle_word_diff " Word-level diff
 ```
 
 ### Blame View
 Full blame information:
 ```vim
-:Gitsigns blame_line            " Blame current line
-:Gitsigns toggle_current_line_blame  " Toggle auto blame
+:Gitsigns blame_line " Blame current line
+:Gitsigns toggle_current_line_blame " Toggle auto blame
 ```
 
 ### Text Objects
@@ -174,9 +174,9 @@ Git hunks as text objects:
 
 Use with operations:
 ```vim
-yih  " Yank hunk
-dih  " Delete hunk
-vih  " Select hunk
+yih " Yank hunk
+dih " Delete hunk
+vih " Select hunk
 ```
 
 ## Integration with Other Features
@@ -250,14 +250,14 @@ When in conflict:
 lazygit --version
 
 # Reinstall
-brew install lazygit  # macOS
+brew install lazygit # macOS
 ```
 
 ### Gitsigns not showing
 ```vim
-:Gitsigns toggle_signs     " Toggle signs
-:Gitsigns refresh          " Force refresh
-:checkhealth gitsigns      " Check setup
+:Gitsigns toggle_signs " Toggle signs
+:Gitsigns refresh " Force refresh
+:checkhealth gitsigns " Check setup
 ```
 
 ### Blame not appearing

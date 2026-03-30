@@ -8,24 +8,24 @@ This Docker integration provides:
 - **Automatic Detection** - Works seamlessly with both Dockerfile and docker-compose.yml
 - **Container Management** - Start, stop, and manage containers from Neovim
 - **Status Monitoring** - See container status in your statusline
-- **Easy Access** - Quick terminal access to running containers  
+- **Easy Access** - Quick terminal access to running containers
 - **Log Viewing** - Stream container logs in floating windows
 - **Visual Management** - LazyDocker in a beautiful floating terminal
 
 ### Key Features
 
-🎯 **Smart Detection**
+ **Smart Detection**
 - Automatically detects project type (Dockerfile vs docker-compose.yml)
 - Uses appropriate Docker or Docker Compose commands
 - No configuration needed - just works!
 
-🐳 **Full Docker Compose Support**
+ **Full Docker Compose Support**
 - Manages multi-container applications
 - Handles service dependencies
 - Preserves volumes and networks
 - Shows logs from all services
 
-🖥️ **Floating Terminal Windows**
+ **Floating Terminal Windows**
 - LazyDocker opens in a centered floating window
 - Logs display in floating terminals
 - Optional floating shell access with `<leader>cdA`
@@ -34,21 +34,21 @@ This Docker integration provides:
 ## Prerequisites
 
 - **Docker** - Install Docker Desktop or Docker Engine
-- **LazyDocker** (optional) - For visual container management
+- **LazyDocker**(optional) - For visual container management
 
 Verify installation:
 ```bash
 docker --version
-lazydocker --version  # Optional but recommended
+lazydocker --version # Optional but recommended
 ```
 
 ## Container Status
 
 The statusline shows your project's Docker status:
-- `📦 No Docker` - No Dockerfile or docker-compose.yml found
-- `📦 No Container` - Docker files exist but no container created
-- `🐳 Running` - Container is actively running
-- `💤 Stopped` - Container exists but is stopped
+- ` No Docker` - No Dockerfile or docker-compose.yml found
+- ` No Container` - Docker files exist but no container created
+- ` Running` - Container is actively running
+- ` Stopped` - Container exists but is stopped
 
 ## Docker Operations
 
@@ -58,15 +58,15 @@ All Docker operations are available through keybindings (see Key Mappings below)
 
 | Key | Description |
 |-----|-------------|
-| `<leader>cdi` | Docker Info 📊 |
-| `<leader>cdb` | Build Docker image 🔨 |
-| `<leader>cds` | Start Docker container 🐳 |
-| `<leader>cda` | Attach to Docker container 🔗 (with service selection) |
-| `<leader>cdA` | Attach to Docker container (floating window) 🪟 |
-| `<leader>cdx` | Stop Docker container 🛑 |
-| `<leader>cdd` | Delete Docker container 🗑️ |
-| `<leader>cdl` | Show Docker logs 📋 (follows logs - use `<C-c>` to stop, then `<C-q>` or `q` to close) |
-| `<leader>cdL` | Open LazyDocker 🐳 |
+| `<leader>cdi` | Docker Info |
+| `<leader>cdb` | Build Docker image |
+| `<leader>cds` | Start Docker container |
+| `<leader>cda` | Attach to Docker container (with service selection) |
+| `<leader>cdA` | Attach to Docker container (floating window) |
+| `<leader>cdx` | Stop Docker container |
+| `<leader>cdd` | Delete Docker container |
+| `<leader>cdl` | Show Docker logs (follows logs - use `<C-c>` to stop, then `<C-q>` or `q` to close) |
+| `<leader>cdL` | Open LazyDocker |
 
 ## Workflow Examples
 
@@ -74,8 +74,8 @@ All Docker operations are available through keybindings (see Key Mappings below)
 
 #### 1. Build & Start
 ```vim
-<leader>cdb   " Build Docker image
-<leader>cds   " Start Docker container
+<leader>cdb " Build Docker image
+<leader>cds " Start Docker container
 ```
 The container is named `docker-<project-name>` with automatic port mapping from EXPOSE directives.
 
@@ -84,29 +84,29 @@ The container is named `docker-<project-name>` with automatic port mapping from 
 #### 1. Create docker-compose.yml
 ```yaml
 services:
-  app:
-    build: .
-    ports:
-      - "8080:8080"
-    depends_on:
-      - redis
-  
-  redis:
-    image: redis:alpine
-    ports:
-      - "6379:6379"
+ app:
+ build: .
+ ports:
+ - "8080:8080"
+ depends_on:
+ - redis
+
+ redis:
+ image: redis:alpine
+ ports:
+ - "6379:6379"
 ```
 
 #### 2. Build & Start All Services
 ```vim
-<leader>cdb   " Build with docker compose build
-<leader>cds   " Start with docker compose up -d
+<leader>cdb " Build with docker compose build
+<leader>cds " Start with docker compose up -d
 ```
 All commands automatically detect and use Docker Compose when docker-compose.yml exists!
 
 ### 3. Access Container
 ```vim
-<leader>cda   " Attach to container
+<leader>cda " Attach to container
 ```
 Opens a terminal inside the container where you can run commands.
 
@@ -115,14 +115,14 @@ When using Docker Compose with multiple services, `<leader>cda` presents an inte
 
 ```
 Select service to attach to:
-> 🗄️ db
-  📧 mailhog
-  🗃️ phpmyadmin
-  🌐 wordpress
+> db
+ mailhog
+ phpmyadmin
+ wordpress
 ```
 
 Features:
-- **Smart Icons** - Services are displayed with helpful icons (🌐 web, 🗄️ database, 📧 mail, etc.)
+- **Smart Icons** - Services are displayed with helpful icons ( web, database, mail, etc.)
 - **Interactive Selection** - Use `j`/`k` or arrow keys to navigate, `Enter` to select
 - **Cancel Anytime** - Press `<Esc>` to cancel without attaching
 - **Single Service** - If only one service exists, it attaches directly without prompting
@@ -138,7 +138,7 @@ go test ./...
 
 ### 5. View Logs
 ```vim
-<leader>cdl     " View Docker logs
+<leader>cdl " View Docker logs
 ```
 The logs window follows container output continuously. To close:
 - Press `<C-c>` to stop following logs
@@ -146,7 +146,7 @@ The logs window follows container output continuously. To close:
 
 ### 6. Stop When Done
 ```vim
-<leader>cdx     " Stop Docker container
+<leader>cdx " Stop Docker container
 ```
 
 ## Docker Compose Support
@@ -156,27 +156,27 @@ If you have a `docker-compose.yml`, the commands automatically use Docker Compos
 ```yaml
 version: '3.8'
 services:
-  app:
-    build: .
-    volumes:
-      - .:/workspace
-    ports:
-      - "8080:8080"
-  
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_PASSWORD: secret
+ app:
+ build: .
+ volumes:
+ - .:/workspace
+ ports:
+ - "8080:8080"
+
+ db:
+ image: postgres:15
+ environment:
+ POSTGRES_PASSWORD: secret
 ```
 
-## LazyDocker Integration 
+## LazyDocker Integration
 
 Press `<leader>cdL` to open LazyDocker in a **beautiful floating terminal window**:
 
 **Key Features:**
 - Visual container management
 - Real-time logs and metrics
-- One-key operations  
+- One-key operations
 - 90% screen size floating window
 
 Additional capabilities:
@@ -268,7 +268,7 @@ This ensures each project has its own isolated container.
 
 Common ports are automatically mapped:
 - `8080:8080` - Web servers
-- `3000:3000` - Node.js apps  
+- `3000:3000` - Node.js apps
 - `5000:5000` - Python Flask
 
 Add more ports in your Dockerfile or docker-compose.yml as needed.

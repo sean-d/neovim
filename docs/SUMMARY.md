@@ -21,20 +21,20 @@
 # User Interface
 
 - [UI Overview](ui/index.md)
-  - [Dashboard Customization](ui/dashboard.md)
-  - [Theme & Colors](ui/theme.md)
+ - [Dashboard Customization](ui/dashboard.md)
+ - [Theme & Colors](ui/theme.md)
 
 # Language Support
 
 - [Development Overview](development/index.md)
-  - [Go Development](development/go.md)
-  - [JavaScript/TypeScript](development/javascript.md)
-    - [Vue.js Limitations](development/vue-limitations.md)
-  - [PHP/WordPress Development](development/php.md)
-  - [PowerShell](development/powershell.md)
-  - [Python Development](development/python.md)
-  - [Rust Development](development/rust.md)
-  - [Shell Scripting](development/shell.md)
+ - [Go Development](development/go.md)
+ - [JavaScript/TypeScript](development/javascript.md)
+ - [Vue.js Limitations](development/vue-limitations.md)
+ - [PHP/WordPress Development](development/php.md)
+ - [PowerShell](development/powershell.md)
+ - [Python Development](development/python.md)
+ - [Rust Development](development/rust.md)
+ - [Shell Scripting](development/shell.md)
 
 # Configuration
 

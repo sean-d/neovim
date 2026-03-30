@@ -24,7 +24,7 @@ pecl install xdebug
 # Add these lines to your php.ini:
 # xdebug.mode=debug
 # xdebug.start_with_request=yes
-# xdebug.client_port=9003  # Xdebug 3 default
+# xdebug.client_port=9003 # Xdebug 3 default
 
 # Install WordPress coding standards
 composer global require wp-coding-standards/wpcs
@@ -33,10 +33,10 @@ composer global require phpcsstandards/phpcsextra
 composer global require dealerdirect/phpcodesniffer-composer-installer
 
 # Verify installation
-php --version  # Should be 8.1+ (WordPress 6.4+ recommendation)
+php --version # Should be 8.1+ (WordPress 6.4+ recommendation)
 composer --version
-php -m | grep xdebug  # Should show xdebug
-phpcs -i  # Should list WordPress standards
+php -m | grep xdebug # Should show xdebug
+phpcs -i # Should list WordPress standards
 ```
 
 ### Auto-installed Components
@@ -62,18 +62,18 @@ Modern WordPress plugin development uses a Composer-centric approach:
 
 ```
 my-plugin/
-├── composer.json          # Dependencies and autoloading
-├── phpunit.xml           # Test configuration
-├── .phpcs.xml            # WordPress coding standards
-├── docker-compose.yml    # Local development environment
-├── src/                  # PSR-4 autoloaded classes
-│   ├── Admin/
-│   ├── Frontend/
-│   └── Core/
-├── tests/                # PHPUnit tests
-├── assets/               # CSS, JS, images
-├── languages/            # i18n files
-└── my-plugin.php         # Main plugin file
+ composer.json # Dependencies and autoloading
+ phpunit.xml # Test configuration
+ .phpcs.xml # WordPress coding standards
+ docker-compose.yml # Local development environment
+ src/ # PSR-4 autoloaded classes
+  Admin/
+  Frontend/
+  Core/
+ tests/ # PHPUnit tests
+ assets/ # CSS, JS, images
+ languages/ # i18n files
+ my-plugin.php # Main plugin file
 ```
 
 ### Composer Setup
@@ -82,36 +82,36 @@ Example `composer.json` for a WordPress plugin:
 
 ```json
 {
-    "name": "yourname/your-plugin",
-    "description": "WordPress plugin description",
-    "type": "wordpress-plugin",
-    "require": {
-        "php": ">=8.1",
-        "composer/installers": "^2.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "wp-coding-standards/wpcs": "^3.0",
-        "phpcsstandards/phpcsutils": "^1.0",
-        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-        "brain/monkey": "^2.6",
-        "mockery/mockery": "^1.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "YourPlugin\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "YourPlugin\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": "phpunit",
-        "phpcs": "phpcs",
-        "phpcbf": "phpcbf"
-    }
+ "name": "yourname/your-plugin",
+ "description": "WordPress plugin description",
+ "type": "wordpress-plugin",
+ "require": {
+ "php": ">=8.1",
+ "composer/installers": "^2.0"
+ },
+ "require-dev": {
+ "phpunit/phpunit": "^9.5",
+ "wp-coding-standards/wpcs": "^3.0",
+ "phpcsstandards/phpcsutils": "^1.0",
+ "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+ "brain/monkey": "^2.6",
+ "mockery/mockery": "^1.5"
+ },
+ "autoload": {
+ "psr-4": {
+ "YourPlugin\\": "src/"
+ }
+ },
+ "autoload-dev": {
+ "psr-4": {
+ "YourPlugin\\Tests\\": "tests/"
+ }
+ },
+ "scripts": {
+ "test": "phpunit",
+ "phpcs": "phpcs",
+ "phpcbf": "phpcbf"
+ }
 }
 ```
 
@@ -123,50 +123,50 @@ Example `docker-compose.yml` for WordPress development:
 version: '3.8'
 
 services:
-  wordpress:
-    image: wordpress:latest
-    ports:
-      - "8080:80"
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DEBUG: 1
-      WORDPRESS_CONFIG_EXTRA: |
-        define( 'WP_DEBUG_LOG', true );
-        define( 'WP_DEBUG_DISPLAY', false );
-        define( 'SCRIPT_DEBUG', true );
-    volumes:
-      - ./:/var/www/html/wp-content/plugins/your-plugin
-      - wordpress:/var/www/html
-    depends_on:
-      - db
+ wordpress:
+ image: wordpress:latest
+ ports:
+ - "8080:80"
+ environment:
+ WORDPRESS_DB_HOST: db
+ WORDPRESS_DB_USER: wordpress
+ WORDPRESS_DB_PASSWORD: wordpress
+ WORDPRESS_DB_NAME: wordpress
+ WORDPRESS_DEBUG: 1
+ WORDPRESS_CONFIG_EXTRA: |
+ define( 'WP_DEBUG_LOG', true );
+ define( 'WP_DEBUG_DISPLAY', false );
+ define( 'SCRIPT_DEBUG', true );
+ volumes:
+ - ./:/var/www/html/wp-content/plugins/your-plugin
+ - wordpress:/var/www/html
+ depends_on:
+ - db
 
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-      MYSQL_ROOT_PASSWORD: somewordpress
-    volumes:
-      - db:/var/lib/mysql
+ db:
+ image: mysql:8.0
+ environment:
+ MYSQL_DATABASE: wordpress
+ MYSQL_USER: wordpress
+ MYSQL_PASSWORD: wordpress
+ MYSQL_ROOT_PASSWORD: somewordpress
+ volumes:
+ - db:/var/lib/mysql
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - "8081:80"
-    environment:
-      PMA_HOST: db
-      PMA_USER: wordpress
-      PMA_PASSWORD: wordpress
-    depends_on:
-      - db
+ phpmyadmin:
+ image: phpmyadmin/phpmyadmin
+ ports:
+ - "8081:80"
+ environment:
+ PMA_HOST: db
+ PMA_USER: wordpress
+ PMA_PASSWORD: wordpress
+ depends_on:
+ - db
 
 volumes:
-  wordpress:
-  db:
+ wordpress:
+ db:
 ```
 
 ### WordPress Coding Standards
@@ -176,34 +176,34 @@ Create `.phpcs.xml` in your project root:
 ```xml
 <?xml version="1.0"?>
 <ruleset name="WordPress Plugin Coding Standards">
-    <description>WordPress coding standards for my plugin</description>
+ <description>WordPress coding standards for my plugin</description>
 
-    <!-- Check all PHP files in directory -->
-    <file>.</file>
-    
-    <!-- Exclude vendor and node_modules -->
-    <exclude-pattern>*/vendor/*</exclude-pattern>
-    <exclude-pattern>*/node_modules/*</exclude-pattern>
-    
-    <!-- Use WordPress standards -->
-    <rule ref="WordPress">
-        <!-- Allow short array syntax -->
-        <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
-    </rule>
-    
-    <!-- Configure text domain for i18n -->
-    <rule ref="WordPress.WP.I18n">
-        <properties>
-            <property name="text_domain" type="array">
-                <element value="your-plugin-textdomain"/>
-            </property>
-        </properties>
-    </rule>
-    
-    <!-- Use PSR-4 autoloading -->
-    <rule ref="WordPress.Files.FileName">
-        <exclude-pattern>*/src/*</exclude-pattern>
-    </rule>
+ <!-- Check all PHP files in directory -->
+ <file>.</file>
+
+ <!-- Exclude vendor and node_modules -->
+ <exclude-pattern>*/vendor/*</exclude-pattern>
+ <exclude-pattern>*/node_modules/*</exclude-pattern>
+
+ <!-- Use WordPress standards -->
+ <rule ref="WordPress">
+ <!-- Allow short array syntax -->
+ <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+ </rule>
+
+ <!-- Configure text domain for i18n -->
+ <rule ref="WordPress.WP.I18n">
+ <properties>
+ <property name="text_domain" type="array">
+ <element value="your-plugin-textdomain"/>
+ </property>
+ </properties>
+ </rule>
+
+ <!-- Use PSR-4 autoloading -->
+ <rule ref="WordPress.Files.FileName">
+ <exclude-pattern>*/src/*</exclude-pattern>
+ </rule>
 </ruleset>
 ```
 
@@ -234,14 +234,14 @@ All PHP keybindings use the `<leader>dph` prefix.
 ## LSP Features
 
 Intelephense provides:
-- **Autocompletion** for WordPress functions, hooks, and classes
-- **Go to definition** for core WordPress functions
-- **Hover documentation** with function signatures
-- **Signature help** for function parameters
-- **Find references** across your codebase
-- **Rename** symbols project-wide
-- **Auto-insertion** of use declarations
-- **Parameter hints** with inlay hints support
+- **Autocompletion**for WordPress functions, hooks, and classes
+- **Go to definition**for core WordPress functions
+- **Hover documentation**with function signatures
+- **Signature help**for function parameters
+- **Find references**across your codebase
+- **Rename**symbols project-wide
+- **Auto-insertion**of use declarations
+- **Parameter hints**with inlay hints support
 
 The configuration includes extensive WordPress stubs:
 - WordPress core functions and classes
@@ -258,26 +258,26 @@ Create `phpunit.xml`:
 ```xml
 <?xml version="1.0"?>
 <phpunit
-    bootstrap="tests/bootstrap.php"
-    colors="true"
-    convertErrorsToExceptions="true"
-    convertNoticesToExceptions="true"
-    convertWarningsToExceptions="true"
+ bootstrap="tests/bootstrap.php"
+ colors="true"
+ convertErrorsToExceptions="true"
+ convertNoticesToExceptions="true"
+ convertWarningsToExceptions="true"
 >
-    <testsuites>
-        <testsuite name="unit">
-            <directory suffix="Test.php">tests/Unit</directory>
-        </testsuite>
-        <testsuite name="integration">
-            <directory suffix="Test.php">tests/Integration</directory>
-        </testsuite>
-    </testsuites>
-    
-    <coverage processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-    </coverage>
+ <testsuites>
+ <testsuite name="unit">
+ <directory suffix="Test.php">tests/Unit</directory>
+ </testsuite>
+ <testsuite name="integration">
+ <directory suffix="Test.php">tests/Integration</directory>
+ </testsuite>
+ </testsuites>
+
+ <coverage processUncoveredFiles="true">
+ <include>
+ <directory suffix=".php">src</directory>
+ </include>
+ </coverage>
 </phpunit>
 ```
 
@@ -295,26 +295,26 @@ use PHPUnit\Framework\TestCase;
 use YourPlugin\Core\Plugin;
 
 class PluginTest extends TestCase {
-    protected function setUp(): void {
-        parent::setUp();
-        Monkey\setUp();
-    }
+ protected function setUp(): void {
+ parent::setUp();
+ Monkey\setUp();
+ }
 
-    protected function tearDown(): void {
-        Monkey\tearDown();
-        parent::tearDown();
-    }
+ protected function tearDown(): void {
+ Monkey\tearDown();
+ parent::tearDown();
+ }
 
-    public function test_plugin_initialization() {
-        Functions\expect('add_action')
-            ->once()
-            ->with('init', Mockery::type('callable'));
-        
-        $plugin = new Plugin();
-        $plugin->init();
-        
-        $this->assertTrue(true); // Assertion will fail if expectations not met
-    }
+ public function test_plugin_initialization() {
+ Functions\expect('add_action')
+ ->once()
+ ->with('init', Mockery::type('callable'));
+
+ $plugin = new Plugin();
+ $plugin->init();
+
+ $this->assertTrue(true); // Assertion will fail if expectations not met
+ }
 }
 ```
 
@@ -365,9 +365,9 @@ The Neovim configuration automatically detects Docker and runs commands inside c
 
 ```bash
 # These commands auto-detect Docker when you use the keybindings:
-<leader>dphr   # Runs PHP file in container if Docker is detected
-<leader>dpht   # Runs PHPUnit in container if Docker is detected
-<leader>dphp   # Opens WP-CLI in container if Docker is detected
+<leader>dphr # Runs PHP file in container if Docker is detected
+<leader>dpht # Runs PHPUnit in container if Docker is detected
+<leader>dphp # Opens WP-CLI in container if Docker is detected
 
 # Manual container commands:
 docker-compose exec wordpress composer install
@@ -393,10 +393,10 @@ Add to your Docker image or install in container:
 
 ```dockerfile
 RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug \
-    && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/xdebug.ini
+ && docker-php-ext-enable xdebug \
+ && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/xdebug.ini \
+ && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/xdebug.ini \
+ && echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/xdebug.ini
 ```
 
 The configuration includes three DAP configurations:
@@ -423,23 +423,23 @@ All configurations automatically handle Xdebug mode and path mappings for seamle
 ### Common Issues
 
 1. **Intelephense License**
-   - Free version works fine for most development
-   - Premium adds better type inference and performance
+ - Free version works fine for most development
+ - Premium adds better type inference and performance
 
 2. **WordPress Stubs Not Loading**
-   - The configuration automatically includes WordPress stubs
-   - Stubs include: wordpress, wordpress-globals, wp-cli, and all PHP extensions
-   - Restart LSP with `:LspRestart` if needed
+ - The configuration automatically includes WordPress stubs
+ - Stubs include: wordpress, wordpress-globals, wp-cli, and all PHP extensions
+ - Restart LSP with `:LspRestart` if needed
 
 3. **Docker Performance (macOS)**
-   - Use named volumes instead of bind mounts for better performance
-   - Consider using Mutagen or docker-sync
+ - Use named volumes instead of bind mounts for better performance
+ - Consider using Mutagen or docker-sync
 
 4. **Composer Memory Errors**
-   ```bash
-   export COMPOSER_MEMORY_LIMIT=-1
-   composer install
-   ```
+ ```bash
+ export COMPOSER_MEMORY_LIMIT=-1
+ composer install
+ ```
 
 ---
 [← Back to JavaScript/TypeScript](javascript.md) | [PowerShell →](powershell.md)

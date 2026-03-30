@@ -28,7 +28,7 @@ Install-Module -Name Pester -Force -Scope CurrentUser
 
 ## Language Server
 
-**PowerShell Editor Services** provides:
+**PowerShell Editor Services**provides:
 - IntelliSense for cmdlets, parameters, and variables
 - Real-time script analysis via PSScriptAnalyzer
 - Go to definition for functions and cmdlets
@@ -47,12 +47,12 @@ The LSP is configured with:
 ### Syntax Support
 - Full PowerShell syntax highlighting via vim's built-in support
 - Support for:
-  - Cmdlets and parameters
-  - Variables and automatic variables
-  - Functions and advanced functions
-  - Classes and enums
-  - DSC resources
-  - Module manifests (.psd1, .psm1, .ps1 files)
+ - Cmdlets and parameters
+ - Variables and automatic variables
+ - Functions and advanced functions
+ - Classes and enums
+ - DSC resources
+ - Module manifests (.psd1, .psm1, .ps1 files)
 
 ### Script Analysis
 PSScriptAnalyzer provides warnings for:
@@ -105,75 +105,75 @@ PowerShell commands use the `<leader>dps` prefix:
 
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory)]
-    [string]$Path,
-    
-    [Parameter()]
-    [ValidateSet('Info', 'Warning', 'Error')]
-    [string]$LogLevel = 'Info'
+ [Parameter(Mandatory)]
+ [string]$Path,
+
+ [Parameter()]
+ [ValidateSet('Info', 'Warning', 'Error')]
+ [string]$LogLevel = 'Info'
 )
 
 begin {
-    # Setup code
-    $ErrorActionPreference = 'Stop'
-    Set-StrictMode -Version Latest
+ # Setup code
+ $ErrorActionPreference = 'Stop'
+ Set-StrictMode -Version Latest
 }
 
 process {
-    try {
-        # Main logic
-        if (-not (Test-Path $Path)) {
-            throw "Path not found: $Path"
-        }
-        
-        # Process file
-        Get-Content $Path | ForEach-Object {
-            # Process each line
-        }
-    }
-    catch {
-        Write-Error "Failed to process: $_"
-        throw
-    }
+ try {
+ # Main logic
+ if (-not (Test-Path $Path)) {
+ throw "Path not found: $Path"
+ }
+
+ # Process file
+ Get-Content $Path | ForEach-Object {
+ # Process each line
+ }
+ }
+ catch {
+ Write-Error "Failed to process: $_"
+ throw
+ }
 }
 
 end {
-    # Cleanup code
+ # Cleanup code
 }
 ```
 
 ### Advanced Functions
 ```powershell
 function Get-SystemHealth {
-    <#
-    .SYNOPSIS
-        Gets system health metrics
-    
-    .DESCRIPTION
-        Retrieves CPU, memory, and disk usage statistics
-    
-    .PARAMETER ComputerName
-        Target computer name(s)
-    
-    .EXAMPLE
-        Get-SystemHealth -ComputerName Server01
-    #>
-    [CmdletBinding()]
-    param(
-        [Parameter(ValueFromPipeline)]
-        [string[]]$ComputerName = 'localhost'
-    )
-    
-    process {
-        foreach ($computer in $ComputerName) {
-            [PSCustomObject]@{
-                ComputerName = $computer
-                CPU = (Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples.CookedValue
-                Memory = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory / 1MB
-                Disk = (Get-PSDrive C).Free / 1GB
-            }
-        }
-    }
+ <#
+ .SYNOPSIS
+ Gets system health metrics
+
+ .DESCRIPTION
+ Retrieves CPU, memory, and disk usage statistics
+
+ .PARAMETER ComputerName
+ Target computer name(s)
+
+ .EXAMPLE
+ Get-SystemHealth -ComputerName Server01
+ #>
+ [CmdletBinding()]
+ param(
+ [Parameter(ValueFromPipeline)]
+ [string[]]$ComputerName = 'localhost'
+ )
+
+ process {
+ foreach ($computer in $ComputerName) {
+ [PSCustomObject]@{
+ ComputerName = $computer
+ CPU = (Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples.CookedValue
+ Memory = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory / 1MB
+ Disk = (Get-PSDrive C).Free / 1GB
+ }
+ }
+ }
 }
 ```
 
@@ -182,15 +182,15 @@ function Get-SystemHealth {
 ### Module Structure
 ```
 MyModule/
-├── MyModule.psd1       # Module manifest
-├── MyModule.psm1       # Root module
-├── Public/            # Exported functions
-│   ├── Get-Something.ps1
-│   └── Set-Something.ps1
-├── Private/           # Internal functions
-│   └── Helper-Function.ps1
-└── Tests/            # Pester tests
-    └── MyModule.Tests.ps1
+ MyModule.psd1 # Module manifest
+ MyModule.psm1 # Root module
+ Public/ # Exported functions
+  Get-Something.ps1
+  Set-Something.ps1
+ Private/ # Internal functions
+  Helper-Function.ps1
+ Tests/ # Pester tests
+  MyModule.Tests.ps1
 ```
 
 ### Loading Modules
@@ -200,7 +200,7 @@ Import-Module MyModule
 
 # Check for specific modules
 if (Get-Module -ListAvailable -Name VMware.PowerCLI) {
-    Import-Module VMware.PowerCLI
+ Import-Module VMware.PowerCLI
 }
 
 # Module development
@@ -274,8 +274,8 @@ Use `<leader>dpsd` to run scripts with PowerShell trace debugging enabled automa
 ### Manual Debugging
 ```powershell
 # Enable debugging
-Set-PSDebug -Trace 1  # Basic trace
-Set-PSDebug -Trace 2  # Detailed trace
+Set-PSDebug -Trace 1 # Basic trace
+Set-PSDebug -Trace 2 # Detailed trace
 
 # Add breakpoints in code
 Set-PSBreakpoint -Script script.ps1 -Line 10
@@ -288,15 +288,15 @@ Write-Verbose "Processing item: $item" -Verbose
 ### Error Handling
 ```powershell
 try {
-    # Risky operation
-    $result = Invoke-RestMethod -Uri $apiUrl
+ # Risky operation
+ $result = Invoke-RestMethod -Uri $apiUrl
 } catch [System.Net.WebException] {
-    Write-Error "Network error: $_"
+ Write-Error "Network error: $_"
 } catch {
-    Write-Error "Unexpected error: $_"
-    throw
+ Write-Error "Unexpected error: $_"
+ throw
 } finally {
-    # Cleanup
+ # Cleanup
 }
 ```
 
@@ -306,22 +306,22 @@ try {
 Create `PSScriptAnalyzerSettings.psd1`:
 ```powershell
 @{
-    Severity = @('Error', 'Warning', 'Information')
-    
-    ExcludeRules = @(
-        'PSAvoidUsingWriteHost'  # If you need Write-Host
-    )
-    
-    Rules = @{
-        PSPlaceOpenBrace = @{
-            Enable = $true
-            OnSameLine = $true  # Matches OTBS style in LSP
-        }
-        PSUseConsistentIndentation = @{
-            Enable = $true
-            IndentationSize = 4
-        }
-    }
+ Severity = @('Error', 'Warning', 'Information')
+
+ ExcludeRules = @(
+ 'PSAvoidUsingWriteHost' # If you need Write-Host
+ )
+
+ Rules = @{
+ PSPlaceOpenBrace = @{
+ Enable = $true
+ OnSameLine = $true # Matches OTBS style in LSP
+ }
+ PSUseConsistentIndentation = @{
+ Enable = $true
+ IndentationSize = 4
+ }
+ }
 }
 ```
 
@@ -337,21 +337,21 @@ Create `PSScriptAnalyzerSettings.psd1`:
 ### Performance
 ```powershell
 # Use filtering at source
-Get-Process | Where-Object { $_.CPU -gt 10 }  # Slower
-Get-Process -Name chrome*  # Faster
+Get-Process | Where-Object { $_.CPU -gt 10 } # Slower
+Get-Process -Name chrome* # Faster
 
 # Use .NET methods for speed
-[System.IO.File]::ReadAllLines($path)  # Fast
-Get-Content $path  # Slower for large files
+[System.IO.File]::ReadAllLines($path) # Fast
+Get-Content $path # Slower for large files
 ```
 
 ### Cross-Platform
 ```powershell
 # Check OS
 if ($IsWindows) {
-    # Windows-specific code
+ # Windows-specific code
 } elseif ($IsLinux -or $IsMacOS) {
-    # Unix-specific code
+ # Unix-specific code
 }
 
 # Use Join-Path for paths

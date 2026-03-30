@@ -42,25 +42,25 @@ The dashboard features a custom sloth design:
 
 ### Layout
 ```
-     [ASCII ART]
-     
-      Find File        f
-      New File         n
-      Find Text        g
-      Recent Files     r
-      Config           c
-      Lazy             L
-      Quit             q
-      Help (README)    h
-      Help (Browser)   H
-    
-    Recent Files:
-    • file1.go
-    • file2.lua
-    
-    Projects:
-    • ~/projects/app1
-    • ~/projects/app2
+ [ASCII ART]
+
+ Find File f
+ New File n
+ Find Text g
+ Recent Files r
+ Config c
+ Lazy L
+ Quit q
+ Help (README) h
+ Help (Browser) H
+
+ Recent Files:
+ • file1.go
+ • file2.lua
+
+ Projects:
+ • ~/projects/app1
+ • ~/projects/app2
 ```
 
 ## Configuration
@@ -70,14 +70,14 @@ Located in `lua/plugins/snacks.lua`:
 ### Customizing ASCII Art
 ```lua
 header = [[
-  -- Your ASCII art here
+ -- Your ASCII art here
 ]]
 ```
 
 ### Adding Shortcuts
 ```lua
 keys = {
-  { icon = "icon", key = "x", desc = "Description", action = ":YourCommand" },
+ { icon = "icon", key = "x", desc = "Description", action = ":YourCommand" },
 }
 ```
 
@@ -85,11 +85,11 @@ keys = {
 Control what appears:
 ```lua
 sections = {
-  { section = "header" },
-  { section = "keys", indent = 2 },
-  { section = "recent_files", indent = 2 },
-  { section = "projects", indent = 2 },
-  { section = "startup" },
+ { section = "header" },
+ { section = "keys", indent = 2 },
+ { section = "recent_files", indent = 2 },
+ { section = "projects", indent = 2 },
+ { section = "startup" },
 }
 ```
 
@@ -122,14 +122,14 @@ Shows at bottom:
 ### Custom Actions
 Add your own shortcuts:
 ```lua
-{ 
-  icon = "📝", 
-  key = "j", 
-  desc = "Journal", 
-  action = function()
-    -- Create today's journal entry
-    vim.cmd("edit ~/journal/" .. os.date("%Y-%m-%d") .. ".md")
-  end 
+{
+ icon = "",
+ key = "j",
+ desc = "Journal",
+ action = function()
+ -- Create today's journal entry
+ vim.cmd("edit ~/journal/" .. os.date("%Y-%m-%d") .. ".md")
+ end
 }
 ```
 

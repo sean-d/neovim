@@ -137,14 +137,14 @@ If using tmux, `<C-h/j/k/l>` seamlessly navigates between Neovim windows and tmu
 ### Code Actions & Docker
 | Key | Description |
 |-----|-------------|
-| `<leader>cdi` | Docker Info 📊 |
-| `<leader>cdb` | Build Docker image 🔨 |
-| `<leader>cds` | Start Docker container 🐳 |
-| `<leader>cda` | Attach to Docker container 🔗 |
-| `<leader>cdA` | Attach to Docker container (floating window) 🪟 |
-| `<leader>cdx` | Stop Docker container 🛑 |
-| `<leader>cdl` | Show Docker logs 📋 (Use `<C-c>` to stop following, then `<C-q>`, `<Esc>` or `q` to close) |
-| `<leader>cdd` | Open LazyDocker 🐳 |
+| `<leader>cdi` | Docker Info |
+| `<leader>cdb` | Build Docker image |
+| `<leader>cds` | Start Docker container |
+| `<leader>cda` | Attach to Docker container |
+| `<leader>cdA` | Attach to Docker container (floating window) |
+| `<leader>cdx` | Stop Docker container |
+| `<leader>cdl` | Show Docker logs (Use `<C-c>` to stop following, then `<C-q>`, `<Esc>` or `q` to close) |
+| `<leader>cdd` | Open LazyDocker |
 | `<leader>cR` | Rename file |
 
 ### Code Outline
@@ -483,9 +483,9 @@ If using tmux, `<C-h/j/k/l>` seamlessly navigates between Neovim windows and tmu
 
 | Key | Description |
 |-----|-------------|
-| `<leader>Dt` | Toggle database UI 🗄️ |
-| `<leader>Da` | Add database connection 🔌 |
-| `<leader>Df` | Find database buffer 🔍 |
+| `<leader>Dt` | Toggle database UI |
+| `<leader>Da` | Add database connection |
+| `<leader>Df` | Find database buffer |
 
 **In Database UI**:
 - `o` or `Enter` - Open/expand item

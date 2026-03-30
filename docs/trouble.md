@@ -101,10 +101,10 @@ For quickfix and location lists, use:
 
 ### Filter by Severity
 In Trouble, diagnostics are grouped by severity:
-- 🔴 Errors - Must fix
-- 🟡 Warnings - Should fix
-- 🔵 Info - Suggestions
-- 💡 Hints - Optional improvements
+- Errors - Must fix
+- Warnings - Should fix
+- Info - Suggestions
+- Hints - Optional improvements
 
 ### Workspace Diagnostics
 Use `<leader>cxx` to see issues across all open files. Great for:

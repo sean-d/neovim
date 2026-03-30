@@ -16,7 +16,7 @@ Full language support for Python development including:
 
 The following components are automatically installed by Mason when you open Neovim:
 - **pyright** - Python Language Server
-- **ruff** - Fast Python linter and formatter  
+- **ruff** - Fast Python linter and formatter
 - **debugpy** - Python debugging support (DAP)
 
 ## Workflow
@@ -43,7 +43,7 @@ uv add --dev ruff mypy pytest pytest-cov
 source .venv/bin/activate
 
 # Verify activation
-which python  # Should show .venv/bin/python
+which python # Should show .venv/bin/python
 ```
 
 ### 4. Open in Neovim
@@ -54,7 +54,7 @@ nvim .
 
 ## Language Server
 
-**Pyright** provides:
+**Pyright**provides:
 - Type checking and inference
 - Auto-completion
 - Go to definition
@@ -64,7 +64,7 @@ nvim .
 - Diagnostic mode: "openFilesOnly" (only checks open files)
 - Type checking mode: "standard"
 
-**Ruff** provides:
+**Ruff**provides:
 - Fast linting (replaces flake8, pylint, etc.)
 - Code formatting (replaces black, isort)
 - Auto-fixing common issues
@@ -129,11 +129,11 @@ The configuration automatically detects and uses activated virtual environments:
 from typing import List, Optional, Dict
 
 def process_data(items: List[str]) -> Dict[str, int]:
-    """Process items and return counts."""
-    counts: Dict[str, int] = {}
-    for item in items:
-        counts[item] = counts.get(item, 0) + 1
-    return counts
+ """Process items and return counts."""
+ counts: Dict[str, int] = {}
+ for item in items:
+ counts[item] = counts.get(item, 0) + 1
+ return counts
 ```
 
 ### Classes with Annotations
@@ -143,12 +143,12 @@ from datetime import datetime
 
 @dataclass
 class User:
-    name: str
-    email: str
-    created_at: datetime = datetime.now()
-    
-    def display_name(self) -> str:
-        return f"{self.name} <{self.email}>"
+ name: str
+ email: str
+ created_at: datetime = datetime.now()
+
+ def display_name(self) -> str:
+ return f"{self.name} <{self.email}>"
 ```
 
 ### Async/Await
@@ -157,16 +157,16 @@ import asyncio
 from typing import List
 
 async def fetch_data(url: str) -> dict:
-    # Simulated async operation
-    await asyncio.sleep(1)
-    return {"url": url, "data": "example"}
+ # Simulated async operation
+ await asyncio.sleep(1)
+ return {"url": url, "data": "example"}
 
 async def main():
-    urls = ["http://api1.com", "http://api2.com"]
-    results = await asyncio.gather(
-        *[fetch_data(url) for url in urls]
-    )
-    return results
+ urls = ["http://api1.com", "http://api2.com"]
+ results = await asyncio.gather(
+ *[fetch_data(url) for url in urls]
+ )
+ return results
 ```
 
 ## Testing with Pytest
@@ -178,23 +178,23 @@ import pytest
 from calculator import Calculator
 
 class TestCalculator:
-    def test_addition(self):
-        calc = Calculator()
-        assert calc.add(2, 3) == 5
-    
-    def test_division_by_zero(self):
-        calc = Calculator()
-        with pytest.raises(ZeroDivisionError):
-            calc.divide(10, 0)
-    
-    @pytest.mark.parametrize("a,b,expected", [
-        (10, 5, 2),
-        (9, 3, 3),
-        (7, 7, 1),
-    ])
-    def test_division(self, a, b, expected):
-        calc = Calculator()
-        assert calc.divide(a, b) == expected
+ def test_addition(self):
+ calc = Calculator()
+ assert calc.add(2, 3) == 5
+
+ def test_division_by_zero(self):
+ calc = Calculator()
+ with pytest.raises(ZeroDivisionError):
+ calc.divide(10, 0)
+
+ @pytest.mark.parametrize("a,b,expected", [
+ (10, 5, 2),
+ (9, 3, 3),
+ (7, 7, 1),
+ ])
+ def test_division(self, a, b, expected):
+ calc = Calculator()
+ assert calc.divide(a, b) == expected
 ```
 
 ### Running Tests
@@ -212,12 +212,12 @@ UV is the preferred package manager, offering faster dependency resolution than 
 ### Project Structure
 ```
 my-project/
-├── pyproject.toml      # Project configuration
-├── uv.lock            # Locked dependencies
-├── .venv/             # Virtual environment
-├── src/my_project/    # Source code
-├── tests/             # Test files
-└── README.md
+ pyproject.toml # Project configuration
+ uv.lock # Locked dependencies
+ .venv/ # Virtual environment
+ src/my_project/ # Source code
+ tests/ # Test files
+ README.md
 ```
 
 ### Common UV Commands
@@ -226,17 +226,17 @@ my-project/
 uv init
 
 # Add dependencies (also available via keybindings)
-uv add flask sqlalchemy       # or use <leader>dpyu
+uv add flask sqlalchemy # or use <leader>dpyu
 uv add --dev pytest ruff mypy # or use <leader>dpyU
 
 # Sync environment
-uv sync                        # or use <leader>dpys
+uv sync # or use <leader>dpys
 
 # Update dependencies
 uv update
 
 # Show installed packages
-uv pip list                   # or use <leader>dpyp
+uv pip list # or use <leader>dpyp
 ```
 
 ## Debugging
@@ -270,14 +270,14 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = [
-    "E",   # pycodestyle errors
-    "W",   # pycodestyle warnings  
-    "F",   # pyflakes
-    "I",   # isort
-    "N",   # pep8-naming
-    "UP",  # pyupgrade
-    "B",   # flake8-bugbear
-    "C4",  # flake8-comprehensions
+ "E", # pycodestyle errors
+ "W", # pycodestyle warnings
+ "F", # pyflakes
+ "I", # isort
+ "N", # pep8-naming
+ "UP", # pyupgrade
+ "B", # flake8-bugbear
+ "C4", # flake8-comprehensions
 ]
 ignore = []
 
@@ -308,10 +308,10 @@ uv add django
 python -m django startproject mysite .
 
 # Run migrations
-<leader>dpyd  # Then type: migrate
+<leader>dpyd # Then type: migrate
 
-# Run server  
-<leader>dpyd  # Then type: runserver
+# Run server
+<leader>dpyd # Then type: runserver
 ```
 
 **Note**: The Django debug configuration runs with `--noreload` to work properly with the debugger.
@@ -332,7 +332,7 @@ uv add flask
 # Create app.py with your Flask code
 
 # Run with debugging
-<leader>dpyD  # Select "Flask" configuration
+<leader>dpyD # Select "Flask" configuration
 ```
 
 **Note**: The Flask debug configuration sets `FLASK_ENV=development` automatically.
@@ -364,27 +364,27 @@ CMD ["python", "-m", "myapp"]
 ```yaml
 version: '3.8'
 services:
-  app:
-    build: .
-    ports:
-      - "8000:8000"
-    environment:
-      - PYTHONUNBUFFERED=1
-    volumes:
-      - .:/app
-    command: python manage.py runserver 0.0.0.0:8000
+ app:
+ build: .
+ ports:
+ - "8000:8000"
+ environment:
+ - PYTHONUNBUFFERED=1
+ volumes:
+ - .:/app
+ command: python manage.py runserver 0.0.0.0:8000
 
-  db:
-    image: postgres:15
-    environment:
-      - POSTGRES_DB=myapp
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=pass
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+ db:
+ image: postgres:15
+ environment:
+ - POSTGRES_DB=myapp
+ - POSTGRES_USER=user
+ - POSTGRES_PASSWORD=pass
+ volumes:
+ - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  postgres_data:
+ postgres_data:
 ```
 
 ## Tips

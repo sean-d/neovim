@@ -6,23 +6,23 @@ Learn how to customize and extend this Neovim configuration to suit your needs.
 
 ```
 ~/.config/nvim/
-├── init.lua                 # Entry point, bootstraps lazy.nvim
-├── lua/
-│   ├── config/
-│   │   ├── options.lua     # Neovim options
-│   │   ├── keymaps.lua     # Global keymappings
-│   │   ├── dev-keymaps.lua # Language development keymaps
-│   │   ├── docker.lua      # Docker integration
-│   │   ├── definition-preview.lua # Custom LSP preview
-│   │   └── *-dev-windows.lua # Language-specific windows
-│   ├── plugins/            # Plugin configurations
-│   │   ├── lsp.lua         # Language server setup
-│   │   ├── colorscheme.lua # Theme configuration
-│   │   └── ...             # Other plugin configs
-│   └── util/               # Utility modules
-│       ├── lsp.lua         # LSP utilities
-│       └── docker.lua      # Docker utilities
-└── docs/                   # Documentation
+ init.lua # Entry point, bootstraps lazy.nvim
+ lua/
+  config/
+   options.lua # Neovim options
+   keymaps.lua # Global keymappings
+   dev-keymaps.lua # Language development keymaps
+   docker.lua # Docker integration
+   definition-preview.lua # Custom LSP preview
+   *-dev-windows.lua # Language-specific windows
+  plugins/ # Plugin configurations
+   lsp.lua # Language server setup
+   colorscheme.lua # Theme configuration
+   ... # Other plugin configs
+  util/ # Utility modules
+  lsp.lua # LSP utilities
+  docker.lua # Docker utilities
+ docs/ # Documentation
 ```
 
 ## Adding Plugins
@@ -33,25 +33,25 @@ Create a new file in `lua/plugins/` or add to existing:
 ```lua
 -- lua/plugins/my-plugin.lua
 return {
-  {
-    "author/plugin-name",
-    event = "VeryLazy",  -- Lazy load
-    dependencies = {
-      "required/dependency",
-    },
-    opts = {
-      -- Plugin options
-      setting1 = true,
-      setting2 = "value",
-    },
-    config = function(_, opts)
-      require("plugin-name").setup(opts)
-      -- Additional configuration
-    end,
-    keys = {
-      { "<leader>mp", "<cmd>PluginCommand<cr>", desc = "Plugin command" },
-    },
-  },
+ {
+ "author/plugin-name",
+ event = "VeryLazy", -- Lazy load
+ dependencies = {
+ "required/dependency",
+ },
+ opts = {
+ -- Plugin options
+ setting1 = true,
+ setting2 = "value",
+ },
+ config = function(_, opts)
+ require("plugin-name").setup(opts)
+ -- Additional configuration
+ end,
+ keys = {
+ { "<leader>mp", "<cmd>PluginCommand<cr>", desc = "Plugin command" },
+ },
+ },
 }
 ```
 
@@ -65,18 +65,18 @@ return {
 
 #### Filetype Loading
 ```lua
-ft = { "go", "lua" },  -- Load for specific filetypes
+ft = { "go", "lua" }, -- Load for specific filetypes
 ```
 
 #### Command Loading
 ```lua
-cmd = { "PluginCommand" },  -- Load when command used
+cmd = { "PluginCommand" }, -- Load when command used
 ```
 
 #### Key Loading
 ```lua
 keys = {
-  { "<leader>x", desc = "Load and run" },
+ { "<leader>x", desc = "Load and run" },
 },
 ```
 
@@ -87,9 +87,9 @@ Add to `lua/plugins/lsp.lua`:
 
 ```lua
 ensure_installed = {
-  "gopls",
-  "lua_ls",
-  "pyright",  -- Add Python support
+ "gopls",
+ "lua_ls",
+ "pyright", -- Add Python support
 },
 ```
 
@@ -98,18 +98,18 @@ Add to the servers table in `lua/plugins/lsp.lua`:
 
 ```lua
 local servers = {
-  pyright = {
-    settings = {
-      python = {
-        analysis = {
-          typeCheckingMode = "basic",
-          autoSearchPaths = true,
-          useLibraryCodeForTypes = true,
-        },
-      },
-    },
-  },
-  -- Other servers...
+ pyright = {
+ settings = {
+ python = {
+ analysis = {
+ typeCheckingMode = "basic",
+ autoSearchPaths = true,
+ useLibraryCodeForTypes = true,
+ },
+ },
+ },
+ },
+ -- Other servers...
 }
 ```
 
@@ -122,9 +122,9 @@ Create debug adapter configuration:
 -- In lua/plugins/dap.lua or new file
 local dap = require("dap")
 dap.adapters.python = {
-  type = "executable",
-  command = "python",
-  args = { "-m", "debugpy.adapter" },
+ type = "executable",
+ command = "python",
+ args = { "-m", "debugpy.adapter" },
 }
 ```
 
@@ -132,13 +132,13 @@ dap.adapters.python = {
 ```lua
 -- lua/plugins/python.lua
 return {
-  {
-    "python-specific/plugin",
-    ft = "python",
-    config = function()
-      -- Python-specific setup
-    end,
-  },
+ {
+ "python-specific/plugin",
+ ft = "python",
+ config = function()
+ -- Python-specific setup
+ end,
+ },
 }
 ```
 
@@ -150,9 +150,9 @@ Edit `lua/config/keymaps.lua`:
 ```lua
 -- The config uses a map wrapper function
 local map = function(mode, lhs, rhs, opts)
-  opts = opts or {}
-  opts.silent = opts.silent ~= false
-  vim.keymap.set(mode, lhs, rhs, opts)
+ opts = opts or {}
+ opts.silent = opts.silent ~= false
+ vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 -- Your custom mapping
@@ -160,8 +160,8 @@ map("n", "<leader>xx", "<cmd>YourCommand<cr>", { desc = "Your description" })
 
 -- With function
 map("n", "<leader>xy", function()
-  -- Your Lua code here
-  print("Custom action!")
+ -- Your Lua code here
+ print("Custom action!")
 end, { desc = "Custom action" })
 ```
 
@@ -170,8 +170,8 @@ In plugin spec:
 
 ```lua
 keys = {
-  { "<leader>ab", "<cmd>PluginCmd<cr>", desc = "Description" },
-  { "<leader>ac", function() require("plugin").action() end, desc = "Action" },
+ { "<leader>ab", "<cmd>PluginCmd<cr>", desc = "Description" },
+ { "<leader>ac", function() require("plugin").action() end, desc = "Action" },
 },
 ```
 
@@ -180,14 +180,14 @@ Add groups in `lua/plugins/which-key.lua` using the v3 spec format:
 
 ```lua
 opts = {
-  spec = {
-    {
-      mode = { "n", "v" },
-      { "<leader>a", group = "ai" },
-      { "<leader>ab", desc = "Browse models" },
-      { "<leader>ac", desc = "Chat with AI" },
-    },
-  },
+ spec = {
+ {
+ mode = { "n", "v" },
+ { "<leader>a", group = "ai" },
+ { "<leader>ab", desc = "Browse models" },
+ { "<leader>ac", desc = "Chat with AI" },
+ },
+ },
 }
 ```
 
@@ -207,12 +207,12 @@ Modify `lua/plugins/lualine.lua`:
 
 ```lua
 sections = {
-  lualine_a = { "mode" },
-  lualine_b = { "branch", "diff" },
-  lualine_c = { "filename" },
-  lualine_x = { "filetype" },
-  lualine_y = { "progress" },
-  lualine_z = { "location" },
+ lualine_a = { "mode" },
+ lualine_b = { "branch", "diff" },
+ lualine_c = { "filename" },
+ lualine_x = { "filetype" },
+ lualine_y = { "progress" },
+ lualine_z = { "location" },
 }
 ```
 
@@ -221,14 +221,14 @@ Edit `lua/plugins/snacks.lua`:
 
 ```lua
 dashboard = {
-  preset = {
-    header = [[
-      Your ASCII art
-    ]],
-    keys = {
-      { icon = "icon", key = "x", desc = "Action", action = ":command" },
-    },
-  },
+ preset = {
+ header = [[
+ Your ASCII art
+ ]],
+ keys = {
+ { icon = "icon", key = "x", desc = "Action", action = ":command" },
+ },
+ },
 }
 ```
 
@@ -237,11 +237,11 @@ dashboard = {
 ### Vim Commands
 ```lua
 vim.api.nvim_create_user_command("MyCommand", function(opts)
-  -- Command logic
-  print("Args:", opts.args)
+ -- Command logic
+ print("Args:", opts.args)
 end, {
-  nargs = "*",  -- Number of args
-  desc = "My custom command",
+ nargs = "*", -- Number of args
+ desc = "My custom command",
 })
 ```
 
@@ -249,7 +249,7 @@ end, {
 ```lua
 -- In lua/config/commands.lua
 _G.my_custom_function = function()
-  -- Your code
+ -- Your code
 end
 
 -- Use in mapping
@@ -263,20 +263,20 @@ Create autocmds directly in your plugin configs or in a dedicated file:
 ```lua
 -- In plugin config or separate file
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "python",
-  callback = function()
-    vim.opt_local.expandtab = true
-    vim.opt_local.shiftwidth = 4
-  end,
-  group = vim.api.nvim_create_augroup("PythonSettings", { clear = true }),
+ pattern = "python",
+ callback = function()
+ vim.opt_local.expandtab = true
+ vim.opt_local.shiftwidth = 4
+ end,
+ group = vim.api.nvim_create_augroup("PythonSettings", { clear = true }),
 })
 
 -- LspAttach is commonly used for LSP keymaps
 vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = function(ev)
-    -- Buffer-local LSP keymaps
-  end,
+ group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+ callback = function(ev)
+ -- Buffer-local LSP keymaps
+ end,
 })
 ```
 
@@ -289,13 +289,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 ### Optimize Startup
 ```vim
-:Lazy profile  " Check load times
+:Lazy profile " Check load times
 ```
 
 ### Disable Features
 In plugin opts:
 ```lua
-enabled = false,  -- Disable specific features
+enabled = false, -- Disable specific features
 ```
 
 ## Debugging Configuration
@@ -315,8 +315,8 @@ enabled = false,  -- Disable specific features
 
 ### Test in Isolation
 ```bash
-nvim -u NONE  # Start without config
-nvim --clean  # Start with defaults
+nvim -u NONE # Start without config
+nvim --clean # Start with defaults
 ```
 
 ## Development Keymaps System
@@ -329,11 +329,11 @@ Edit `lua/config/dev-keymaps.lua`:
 ```lua
 -- Define language-specific keymaps
 local lang_keymaps = {
-  python = {
-    { "r", ":TermExec cmd='python %'<CR>", "Run file" },
-    { "t", ":TermExec cmd='pytest %'<CR>", "Test file" },
-    -- Add more...
-  },
+ python = {
+ { "r", ":TermExec cmd='python %'<CR>", "Run file" },
+ { "t", ":TermExec cmd='pytest %'<CR>", "Test file" },
+ -- Add more...
+ },
 }
 
 -- Register with prefix
@@ -345,18 +345,18 @@ Create custom tool windows in `lua/config/python-dev-windows.lua`:
 
 ```lua
 return {
-  {
-    key = "p",
-    cmd = "pip list",
-    title = "Installed Packages",
-    syntax = "text",
-  },
-  {
-    key = "r",
-    cmd = "python -m pytest",
-    title = "Run Tests",
-    syntax = "python",
-  },
+ {
+ key = "p",
+ cmd = "pip list",
+ title = "Installed Packages",
+ syntax = "text",
+ },
+ {
+ key = "r",
+ cmd = "python -m pytest",
+ title = "Run Tests",
+ syntax = "python",
+ },
 }
 ```
 
@@ -370,20 +370,20 @@ local dap = require("dap")
 
 -- Python example
 dap.adapters.python = {
-  type = "executable",
-  command = vim.fn.exepath("debugpy-adapter"),
+ type = "executable",
+ command = vim.fn.exepath("debugpy-adapter"),
 }
 
 dap.configurations.python = {
-  {
-    type = "python",
-    request = "launch",
-    name = "Launch file",
-    program = "${file}",
-    pythonPath = function()
-      return vim.fn.exepath("python")
-    end,
-  },
+ {
+ type = "python",
+ request = "launch",
+ name = "Launch file",
+ program = "${file}",
+ pythonPath = function()
+ return vim.fn.exepath("python")
+ end,
+ },
 }
 ```
 
@@ -394,9 +394,9 @@ Sessions are automatically saved every 30 seconds. Customize in plugin config:
 ```lua
 -- In auto-session plugin config
 opts = {
-  auto_save = true,
-  auto_restore = true,
-  auto_session_suppress_dirs = { "~/", "/" },
+ auto_save = true,
+ auto_restore = true,
+ auto_session_suppress_dirs = { "~/", "/" },
 }
 ```
 
@@ -408,28 +408,28 @@ Mason handles installation of LSP servers, formatters, linters, and debuggers:
 ```lua
 -- In lua/plugins/lsp.lua
 opts = {
-  ensure_installed = {
-    -- LSP servers
-    "lua_ls",
-    "pyright",
-    
-    -- Formatters
-    "prettier",
-    "stylua",
-    "black",
-    
-    -- Debuggers
-    "debugpy",
-    "codelldb",
-  },
+ ensure_installed = {
+ -- LSP servers
+ "lua_ls",
+ "pyright",
+
+ -- Formatters
+ "prettier",
+ "stylua",
+ "black",
+
+ -- Debuggers
+ "debugpy",
+ "codelldb",
+ },
 }
 ```
 
 ### Manual Installation
 ```vim
-:Mason              " Open Mason UI
+:Mason " Open Mason UI
 :MasonInstall black " Install specific tool
-:MasonUpdate       " Update all tools
+:MasonUpdate " Update all tools
 ```
 
 ## Docker Integration
@@ -439,7 +439,7 @@ The configuration includes async Docker operations. Customize in `lua/config/doc
 ```lua
 -- Add custom Docker commands
 vim.keymap.set("n", "<leader>cdp", function()
-  require("util.docker").docker_command("ps -a", "Docker Processes")
+ require("util.docker").docker_command("ps -a", "Docker Processes")
 end, { desc = "Docker processes" })
 ```
 
@@ -464,12 +464,12 @@ Create reusable plugin specs:
 ```lua
 -- my-module.lua
 return {
-  setup = function()
-    -- Module setup
-  end,
-  plugins = {
-    -- Plugin specs
-  },
+ setup = function()
+ -- Module setup
+ end,
+ plugins = {
+ -- Plugin specs
+ },
 }
 ```
 

@@ -2,8 +2,8 @@
 
 **note**
 
-This config has been saved local and evolved over time. A friend asked about it and I realized maybe I should put this up in github for others. 
-Doing so meant I needed to document everything and how to use it. Enter Claude for helping document it all. 
+This config has been saved local and evolved over time. A friend asked about it and I realized maybe I should put this up in github for others.
+Doing so meant I needed to document everything and how to use it. Enter Claude for helping document it all.
 
 
 **/note**
@@ -11,7 +11,7 @@ Doing so meant I needed to document everything and how to use it. Enter Claude f
 
 A modern Neovim setup optimized for full-stack development with comprehensive language support, focusing on productivity and clean UI.
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Backup existing config
@@ -24,19 +24,19 @@ git clone git@github.com:sean-d/neovim.git ~/.config/nvim
 cd ~/.config/nvim && nvim
 ```
 
-## 📚 Documentation
+## Documentation
 
 - **[Installation Guide](installation.md)** - Prerequisites, setup, and troubleshooting
 - **[Key Mappings](keymaps.md)** - Complete keybinding reference
 - **[Navigation](navigation.md)** - File explorer, fuzzy finding, Harpoon
 - **[Language Development](development/index.md)** - Language-specific features
-  - [Go Development](development/go.md)
-  - [JavaScript/TypeScript](development/javascript.md)
-  - [PHP/WordPress Development](development/php.md)
-  - [PowerShell](development/powershell.md)
-  - [Python Development](development/python.md)
-  - [Rust Development](development/rust.md)
-  - [Shell Scripting](development/shell.md)
+ - [Go Development](development/go.md)
+ - [JavaScript/TypeScript](development/javascript.md)
+ - [PHP/WordPress Development](development/php.md)
+ - [PowerShell](development/powershell.md)
+ - [Python Development](development/python.md)
+ - [Rust Development](development/rust.md)
+ - [Shell Scripting](development/shell.md)
 - **[Git Integration](git.md)** - Gitsigns, Lazygit, and version control
 - **[Docker Integration](development/docker.md)** - Container-based development workflows
 - **[Database Tools](development/database.md)** - SQL development with vim-dadbod
@@ -44,36 +44,36 @@ cd ~/.config/nvim && nvim
 - **[Markdown](markdown.md)** - Enhanced markdown editing and preview
 - **[RESTful Testing](rest-api.md)** - Test APIs directly in Neovim
 - **[UI Customization](ui/index.md)** - Theme, dashboard, statusline
-  - [Dashboard Customization](ui/dashboard.md)
-  - [Theme & Colors](ui/theme.md)
+ - [Dashboard Customization](ui/dashboard.md)
+ - [Theme & Colors](ui/theme.md)
 - **[Trouble - Code Issues & Navigation](trouble.md)** - Using Trouble.nvim for diagnostics
 - **[Installed Plugins](plugins.md)** - Complete list of all plugins with links
 - **[Customization Guide](customization.md)** - How to add your own features
 
-## ✨ Key Features
+## Key Features
 
-- **🎨 Beautiful UI** - Catppuccin theme with custom pink accents
-- **🔍 Smart Navigation** - Flash.nvim for lightning-fast jumps
-- **📝 Full LSP Support** - Auto-completion, diagnostics, and refactoring for 13+ languages
-- **🐹 Go Development** - Comprehensive tooling with go.nvim and debugging
-- **🦀 Rust Development** - Full-featured Rust support with rustaceanvim
-- **🐍 Python Development** - Virtual env support, debugging, and UV package manager
-- **📜 JavaScript/TypeScript** - Vue 3 support, debugging, ESLint, and Prettier
-- **🐘 PHP Development** - WordPress optimized with Intelephense and Xdebug
-- **🐚 Shell Scripting** - Bash/Zsh support with LSP diagnostics and formatting
-- **⚡ PowerShell** - Full PowerShell development with LSP
-- **🐳 Docker Integration** - Container workflows with docker-compose support
-- **📄 Markdown Excellence** - Live preview, image paste, table formatting
-- **🚀 Fast Startup** - Lazy-loaded plugins for optimal performance
-- **🎯 Project Navigation** - Harpoon for quick file switching
-- **🔧 Integrated Terminal** - Floating terminals with Snacks.nvim
-- **📊 Git Integration** - Inline blame, Lazygit, GitHub integration
-- **🔍 Enhanced Diagnostics** - Trouble.nvim for beautiful error navigation
-- **🗄️ Database Tools** - SQL development with vim-dadbod and interactive UI
-- **🔌 REST API Testing** - Test APIs with .http files using kulala.nvim
-- **🎯 Debugging Support** - Full DAP integration for multiple languages
+- **Beautiful UI** - Catppuccin theme with custom pink accents
+- **Smart Navigation** - Flash.nvim for lightning-fast jumps
+- **Full LSP Support** - Auto-completion, diagnostics, and refactoring for 13+ languages
+- **Go Development** - Comprehensive tooling with go.nvim and debugging
+- **Rust Development** - Full-featured Rust support with rustaceanvim
+- **Python Development** - Virtual env support, debugging, and UV package manager
+- **JavaScript/TypeScript** - Vue 3 support, debugging, ESLint, and Prettier
+- **PHP Development** - WordPress optimized with Intelephense and Xdebug
+- **Shell Scripting** - Bash/Zsh support with LSP diagnostics and formatting
+- **PowerShell** - Full PowerShell development with LSP
+- **Docker Integration** - Container workflows with docker-compose support
+- **Markdown Excellence** - Live preview, image paste, table formatting
+- **Fast Startup** - Lazy-loaded plugins for optimal performance
+- **Project Navigation** - Harpoon for quick file switching
+- **Integrated Terminal** - Floating terminals with Snacks.nvim
+- **Git Integration** - Inline blame, Lazygit, GitHub integration
+- **Enhanced Diagnostics** - Trouble.nvim for beautiful error navigation
+- **Database Tools** - SQL development with vim-dadbod and interactive UI
+- **REST API Testing** - Test APIs with .http files using kulala.nvim
+- **Debugging Support** - Full DAP integration for multiple languages
 
-## 🎯 Custom Enhancements
+## Custom Enhancements
 
 This configuration includes several custom-built features that enhance the development experience:
 
@@ -93,7 +93,7 @@ This configuration includes several custom-built features that enhance the devel
 - **Smart Indent Guides** - Active indent scope highlighted in mauve with animated transitions, while inactive guides remain subtle.
 - **Smart Bufferline** - Clean buffer tabs with file icons, diagnostics indicators, and the ability to pin important buffers (hidden by default, toggle with `<leader>ub`).
 
-## 🎮 Getting Started Shortcuts
+## Getting Started Shortcuts
 
 Here's a taste of the shortcuts that will make your development life better:
 
@@ -134,6 +134,6 @@ Here's a taste of the shortcuts that will make your development life better:
 
 **[→ View Complete Keybinding Reference](keymaps.md)**
 
-## 🚀 Getting Started
+## Getting Started
 
-Ready to dive in? Check out the **[Installation Guide](installation.md)** for setup instructions.
+Ready to dive in? Check out the **[Installation Guide](installation.md)**for setup instructions.

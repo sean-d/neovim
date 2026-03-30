@@ -4,21 +4,21 @@ Comprehensive Go development environment powered by go.nvim and gopls.
 
 ## Features
 
-- **Full LSP Support** via gopls
-- **Integrated Testing** with beautiful output windows
-- **Code Coverage** visualization
-- **Debugging** with delve integration
-- **Import Management** automatic organization
-- **Format on Save** with gofmt/goimports
-- **Code Quality** with go vet and custom format checking
-- **Code Generation** struct tags, interfaces, etc.
+- **Full LSP Support**via gopls
+- **Integrated Testing**with beautiful output windows
+- **Code Coverage**visualization
+- **Debugging**with delve integration
+- **Import Management**automatic organization
+- **Format on Save**with gofmt/goimports
+- **Code Quality**with go vet and custom format checking
+- **Code Generation**struct tags, interfaces, etc.
 
 ## Prerequisites
 
 ```bash
 # Install Go
-brew install go           # macOS
-sudo apt install golang   # Ubuntu/Debian
+brew install go # macOS
+sudo apt install golang # Ubuntu/Debian
 
 # Verify installation
 go version
@@ -33,7 +33,7 @@ When you first open a Go file, run:
 
 This installs all necessary Go tools:
 - goimports
-- gopls  
+- gopls
 - golines (formatter with line length limit)
 - delve (debugger)
 - and more...
@@ -138,10 +138,10 @@ Coverage is displayed in a floating window showing:
 1. Set breakpoints: `<leader>db`
 2. Start debugger: `<leader>dgoD`
 3. Use debug controls:
-   - Continue: `<leader>dc`
-   - Step over: `<leader>dO`
-   - Step into: `<leader>di`
-   - Step out: `<leader>do`
+ - Continue: `<leader>dc`
+ - Step over: `<leader>dO`
+ - Step into: `<leader>di`
+ - Step out: `<leader>do`
 4. View variables in debug UI
 
 ### Debug Tests
@@ -165,10 +165,10 @@ Position cursor on test function and press `<leader>dgoX` to debug it.
 While go.nvim supports various code generation features, they're accessible through commands:
 
 ```vim
-:GoAddTag         " Add struct tags
-:GoRmTag          " Remove struct tags
-:GoImpl           " Generate interface implementation
-:GoGenerate       " Run go generate
+:GoAddTag " Add struct tags
+:GoRmTag " Remove struct tags
+:GoImpl " Generate interface implementation
+:GoGenerate " Run go generate
 ```
 
 ## Project Structure
@@ -194,8 +194,8 @@ Test output windows can be:
 Add tags to struct fields:
 ```go
 type User struct {
-    Name string // Put cursor here
-    Email string
+ Name string // Put cursor here
+ Email string
 }
 ```
 Run `:GoAddTag json` to add JSON tags.
@@ -211,9 +211,9 @@ Generates the required methods.
 
 ### gopls not starting
 ```vim
-:LspInfo          " Check if gopls is running
-:LspLog           " View error logs
-:Mason            " Reinstall gopls
+:LspInfo " Check if gopls is running
+:LspLog " View error logs
+:Mason " Reinstall gopls
 ```
 
 ### Tests not running
@@ -223,7 +223,7 @@ Generates the required methods.
 
 ### Debugging not working
 ```vim
-:checkhealth      " Check overall setup
+:checkhealth " Check overall setup
 :lua require("go.install").update_all_sync() " Reinstall tools
 ```
 

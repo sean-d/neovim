@@ -23,16 +23,16 @@ Complete list of all plugins used in this Neovim configuration, organized by cat
 
 ### Swiss Army Knife
 - [snacks.nvim](https://github.com/folke/snacks.nvim) - Collection of small useful plugins:
-  - **Dashboard** - Startup screen with ASCII art
-  - **Explorer** - File tree explorer
-  - **Picker** - Fuzzy finder (Telescope alternative)
-  - **Terminal** - Floating and split terminals
-  - **Notifier** - Notification system
-  - **Lazygit** - Git integration
-  - **Scratch** - Temporary buffers
-  - **Statuscolumn** - Enhanced status column
-  - **Words** - Word highlighting
-  - **Bigfile** - Performance for large files
+ - **Dashboard** - Startup screen with ASCII art
+ - **Explorer** - File tree explorer
+ - **Picker** - Fuzzy finder (Telescope alternative)
+ - **Terminal** - Floating and split terminals
+ - **Notifier** - Notification system
+ - **Lazygit** - Git integration
+ - **Scratch** - Temporary buffers
+ - **Statuscolumn** - Enhanced status column
+ - **Words** - Word highlighting
+ - **Bigfile** - Performance for large files
 
 ## Editor Enhancement
 
@@ -101,7 +101,7 @@ Supported via LSP (vtsls, eslint) - no specific plugins required
 
 ## Debugging
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client
-  - Configured for Python (debugpy), Go (delve), JavaScript/TypeScript, PHP
+ - Configured for Python (debugpy), Go (delve), JavaScript/TypeScript, PHP
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) - UI for nvim-dap
 - [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text) - Virtual text for debugger
 - [nvim-nio](https://github.com/nvim-neotest/nvim-nio) - Async IO library (dap-ui dependency)
@@ -123,49 +123,49 @@ Supported via LSP (vtsls, eslint) - no specific plugins required
 
 ## Container Management
 - LazyDocker integration via Snacks terminal
-  - Requires `lazydocker` CLI: `brew install lazydocker`
-  - Opens in floating terminal window
-  - Access via `<leader>cdL`
+ - Requires `lazydocker` CLI: `brew install lazydocker`
+ - Opens in floating terminal window
+ - Access via `<leader>cdL`
 
 ## Database Tools
 - [vim-dadbod](https://github.com/tpope/vim-dadbod) - Database interface for Neovim
 - [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui) - Interactive database UI
 - [vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion) - SQL completion source
-  - Multiple database support (PostgreSQL, MySQL, SQLite, Redis, MongoDB)
-  - Interactive drawer interface for browsing schemas
-  - Query management and saved queries
-  - Access via `<leader>Dt`
+ - Multiple database support (PostgreSQL, MySQL, SQLite, Redis, MongoDB)
+ - Interactive drawer interface for browsing schemas
+ - Query management and saved queries
+ - Access via `<leader>Dt`
 
 ## Code Issues & Navigation
 - [trouble.nvim](https://github.com/folke/trouble.nvim) - Pretty list for diagnostics, references, todos, and more
-  - Enhanced error/warning list with preview
-  - Workspace-wide diagnostics view
-  - LSP references, definitions, and implementations
-  - Todo comments navigation
-  - Quickfix and location list enhancement
-  - Access via `<leader>cx` prefix ("trouble")
+ - Enhanced error/warning list with preview
+ - Workspace-wide diagnostics view
+ - LSP references, definitions, and implementations
+ - Todo comments navigation
+ - Quickfix and location list enhancement
+ - Access via `<leader>cx` prefix ("trouble")
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) - Highlight and search todo comments
-  - Highlights TODO, FIXME, HACK, etc. in code
-  - Integrates with Trouble for todo list
-  - Navigate with `]t` and `[t`
+ - Highlights TODO, FIXME, HACK, etc. in code
+ - Integrates with Trouble for todo list
+ - Navigate with `]t` and `[t`
 
 ## REST API Testing
 - [kulala.nvim](https://github.com/mistweaverco/kulala.nvim) - REST client for testing APIs
-  - Support for .http and .rest files
-  - Environment variables and multiple environments
-  - Response viewing in floating windows
-  - cURL import/export
-  - Access via `<leader>r` prefix
+ - Support for .http and .rest files
+ - Environment variables and multiple environments
+ - Response viewing in floating windows
+ - cURL import/export
+ - Access via `<leader>r` prefix
 
 
 ## Formatting
 - [conform.nvim](https://github.com/stevearc/conform.nvim) - Fast async formatter
-  - Prettier/Prettierd for web languages
-  - Stylua for Lua
-  - Ruff for Python
-  - gofmt/goimports for Go
-  - rustfmt for Rust
-  - shfmt for Shell scripts
+ - Prettier/Prettierd for web languages
+ - Stylua for Lua
+ - Ruff for Python
+ - gofmt/goimports for Go
+ - rustfmt for Rust
+ - shfmt for Shell scripts
 
 ## Session Management
 - [auto-session](https://github.com/rmagatti/auto-session) - Automatic session save/restore

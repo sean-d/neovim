@@ -65,9 +65,9 @@ Requires a Nerd Font for icons:
 Edit `lua/plugins/colorscheme.lua`:
 ```lua
 color_overrides = {
-  macchiato = {
-    -- Your color overrides
-  }
+ macchiato = {
+ -- Your color overrides
+ }
 }
 ```
 

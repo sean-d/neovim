@@ -13,7 +13,7 @@ Complete installation and setup guide for this Neovim configuration.
 
 The following tools are needed for full functionality:
 
-- **Neovim** >= 0.9.0
+- **Neovim**>= 0.9.0
 - **Git** - Plugin management and version control
 - **ripgrep** - Fast searching with `<leader>/`
 - **Node.js** - LSP servers and markdown preview
@@ -28,7 +28,7 @@ The following tools are needed for full functionality:
 - **PowerShell** - PowerShell development
 - **Python 3.x** - Python development
 - **UV** - Modern Python package manager
-- **pngpaste** (macOS) or **xclip** (Linux) - Paste images in markdown
+- **pngpaste**(macOS) or **xclip**(Linux) - Paste images in markdown
 
 All prerequisites are installed by the platform-specific commands below.
 
@@ -60,7 +60,7 @@ pwsh -NoProfile -Command "Install-Module -Name PSScriptAnalyzer -Force -Scope Cu
 
 # Install UV (Python package manager)
 curl -LsSf https://astral.sh/uv/install.sh | sh
-source $HOME/.local/bin/env  # Add to PATH
+source $HOME/.local/bin/env # Add to PATH
 
 # Verify installations
 nvim --version
@@ -192,26 +192,26 @@ nvim
 
 When you first launch Neovim after installation, expect the following:
 
-1. **Initial Plugin Installation** (~1-2 minutes)
-   - Lazy.nvim will show "Working (1)" while installing 62 plugins
-   - The interface may appear frozen - this is normal, let it complete
-   - Some plugins compile during installation which takes time
+1. **Initial Plugin Installation**(~1-2 minutes)
+ - Lazy.nvim will show "Working (1)" while installing 62 plugins
+ - The interface may appear frozen - this is normal, let it complete
+ - Some plugins compile during installation which takes time
 
 2. **Common Notifications You'll See**
-   - **"Phpactor is not installed, would you like to install it?"** - Press `1` or Enter for Yes
-   - **"phpactor not found. clone repo..."** - This is normal, it's downloading phpactor
-   - **"[nvim-treesitter][php]: Could not create tree-sitter-php-tmp"** - This is harmless, the parser still installs correctly
-   - **Multiple "Installing..." notifications** - Mason is auto-installing language servers and tools
+ - **"Phpactor is not installed, would you like to install it?"** - Press `1` or Enter for Yes
+ - **"phpactor not found. clone repo..."** - This is normal, it's downloading phpactor
+ - **"[nvim-treesitter][php]: Could not create tree-sitter-php-tmp"** - This is harmless, the parser still installs correctly
+ - **Multiple "Installing..." notifications** - Mason is auto-installing language servers and tools
 
 3. **Background Installations**
-   - Treesitter parsers compile from source
-   - Mason downloads LSPs, debuggers, and formatters
-   - First file of each language type triggers tool installation
+ - Treesitter parsers compile from source
+ - Mason downloads LSPs, debuggers, and formatters
+ - First file of each language type triggers tool installation
 
 4. **Success Indicators**
-   - "Config loaded successfully" in the status line
-   - Syntax highlighting appears in your files
-   - No more "Working" status in Lazy
+ - "Config loaded successfully" in the status line
+ - Syntax highlighting appears in your files
+ - No more "Working" status in Lazy
 
 **Note**: Future launches will be fast (~80ms) after this initial setup.
 
@@ -221,9 +221,9 @@ After plugins install:
 
 ```vim
 " In Neovim, run these commands:
-:checkhealth     " Check for any issues
-:Mason           " Verify LSP servers installed
-:Lazy            " Check plugin status
+:checkhealth " Check for any issues
+:Mason " Verify LSP servers installed
+:Lazy " Check plugin status
 ```
 
 ## Initial Setup
@@ -264,7 +264,7 @@ To add more servers:
 
 Go development tools are automatically installed when you first open a Go file. To manually install or update all Go tools:
 ```vim
-:lua require("go.install").update_all_sync()  " Install/update Go development tools
+:lua require("go.install").update_all_sync() " Install/update Go development tools
 ```
 
 ### Markdown Preview
@@ -287,15 +287,15 @@ To get the latest updates from the original repository:
 cd ~/.config/nvim
 git pull
 # In Neovim:
-:Lazy sync  " Update plugins
+:Lazy sync " Update plugins
 ```
 
 ### Update Plugins
 
 ```vim
-:Lazy sync    " Update all plugins
-:Lazy update  " Update without syncing lockfile
-:Mason        " Update LSP servers
+:Lazy sync " Update all plugins
+:Lazy update " Update without syncing lockfile
+:Mason " Update LSP servers
 ```
 
 ## Troubleshooting
@@ -304,15 +304,15 @@ git pull
 
 #### Plugins not loading
 ```vim
-:Lazy sync      " Force plugin sync
-:checkhealth    " Check for issues
+:Lazy sync " Force plugin sync
+:checkhealth " Check for issues
 ```
 
 #### LSP not working
 ```vim
-:LspInfo        " Check server status
-:LspLog         " View LSP logs
-:Mason          " Reinstall servers
+:LspInfo " Check server status
+:LspLog " View LSP logs
+:Mason " Reinstall servers
 ```
 
 #### Go features not working
@@ -321,8 +321,8 @@ git pull
 go version
 
 # In Neovim:
-:lua require("go.install").update_all_sync()  " Install/update Go tools
-:checkhealth go     " Check Go setup
+:lua require("go.install").update_all_sync() " Install/update Go tools
+:checkhealth go " Check Go setup
 ```
 
 #### Clipboard not working

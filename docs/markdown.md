@@ -49,7 +49,7 @@ Headers are rendered with:
 ```python
 # Syntax highlighted code blocks
 def hello():
-    print("Hello, World!")
+ print("Hello, World!")
 ```
 
 ### Tables
@@ -107,7 +107,7 @@ Bullets.vim provides:
 - Automatic renumbering
 
 ### Numbered Lists
-1. Start with `1.` 
+1. Start with `1.`
 2. Press `<CR>` for next item
 3. Numbers auto-update
 4. Reorder without renumbering manually
@@ -157,14 +157,14 @@ Offers:
 
 Scratch buffers are great for markdown notes:
 ```vim
-<leader>xn  " New scratch buffer
-<leader>xa  " Browse all scratches
-<leader>xx  " Open last scratch
+<leader>xn " New scratch buffer
+<leader>xa " Browse all scratches
+<leader>xx " Open last scratch
 ```
 
 Perfect for:
 - Quick notes
-- Meeting minutes  
+- Meeting minutes
 - Code experiments
 - Documentation drafts
 
@@ -234,10 +234,10 @@ Customize preview with:
 ### Rendering issues
 The render-markdown plugin provides commands:
 ```vim
-:RenderMarkdown         " Show status
-:RenderMarkdown enable  " Enable rendering
+:RenderMarkdown " Show status
+:RenderMarkdown enable " Enable rendering
 :RenderMarkdown disable " Disable rendering
-:RenderMarkdown toggle  " Toggle on/off
+:RenderMarkdown toggle " Toggle on/off
 ```
 
 ---

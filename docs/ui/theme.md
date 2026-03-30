@@ -7,7 +7,7 @@ This configuration uses Catppuccin Macchiato with custom enhancements for a cohe
 ### Base Theme
 **Catppuccin Macchiato** - A soothing pastel theme with:
 - Soft, eye-friendly colors
-- High contrast for readability  
+- High contrast for readability
 - Consistent color semantics
 
 ### Customizations
@@ -53,7 +53,7 @@ The theme has been modified with:
 
 #### Go
 - **Package** - Pink
-- **Imports** - Lavender  
+- **Imports** - Lavender
 - **Functions** - Blue
 - **Types** - Yellow
 - **Built-ins** - Red
@@ -69,7 +69,7 @@ The theme has been modified with:
 ### Floating Windows
 All floating windows share:
 ```lua
-FloatBorder = { fg = "#f5c2e7" }  -- Pink borders
+FloatBorder = { fg = "#f5c2e7" } -- Pink borders
 NormalFloat = { link = "Normal" } -- Match background
 ```
 
@@ -130,31 +130,31 @@ The configuration includes nvim-colorizer for displaying colors inline:
 In `lua/plugins/colorscheme.lua`:
 ```lua
 opts = {
-  flavour = "macchiato", -- latte, frappe, macchiato, mocha
-  background = {
-    light = "latte",
-    dark = "macchiato",
-  },
-  transparent_background = false,
-  show_end_of_buffer = false,
-  term_colors = true,
-  dim_inactive = {
-    enabled = false,
-  },
-  styles = {
-    comments = { "italic" },
-    conditionals = { "italic" },
-    loops = {},
-    functions = {},
-    keywords = {},
-    strings = {},
-    variables = {},
-    numbers = {},
-    booleans = {},
-    properties = {},
-    types = {},
-    operators = {},
-  },
+ flavour = "macchiato", -- latte, frappe, macchiato, mocha
+ background = {
+ light = "latte",
+ dark = "macchiato",
+ },
+ transparent_background = false,
+ show_end_of_buffer = false,
+ term_colors = true,
+ dim_inactive = {
+ enabled = false,
+ },
+ styles = {
+ comments = { "italic" },
+ conditionals = { "italic" },
+ loops = {},
+ functions = {},
+ keywords = {},
+ strings = {},
+ variables = {},
+ numbers = {},
+ booleans = {},
+ properties = {},
+ types = {},
+ operators = {},
+ },
 }
 ```
 
@@ -162,29 +162,29 @@ opts = {
 Override specific colors:
 ```lua
 color_overrides = {
-  macchiato = {
-    base = "#1e1e2e",
-    mantle = "#181825",
-    -- Add more overrides
-  }
+ macchiato = {
+ base = "#1e1e2e",
+ mantle = "#181825",
+ -- Add more overrides
+ }
 }
 ```
 
 ### Integration Settings
 ```lua
 integrations = {
-  cmp = true,
-  gitsigns = true,
-  treesitter = true,
-  notify = true,
-  mini = {
-    enabled = true,
-    indentscope_color = "mauve",
-  },
-  snacks = true,
-  which_key = true,
-  nvimtree = false,
-  telescope = false,
+ cmp = true,
+ gitsigns = true,
+ treesitter = true,
+ notify = true,
+ mini = {
+ enabled = true,
+ indentscope_color = "mauve",
+ },
+ snacks = true,
+ which_key = true,
+ nvimtree = false,
+ telescope = false,
 }
 ```
 
@@ -197,9 +197,9 @@ integrations = {
 
 ### Checking Current Colors
 ```vim
-:highlight                 " List all groups
-:highlight MyGroup        " Check specific group
-:Inspect                  " Check highlight under cursor
+:highlight " List all groups
+:highlight MyGroup " Check specific group
+:Inspect " Check highlight under cursor
 ```
 
 ### Color Picker
