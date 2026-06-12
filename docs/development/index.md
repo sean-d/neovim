@@ -8,7 +8,6 @@ Each language has full LSP support with auto-completion, diagnostics, formatting
 
 - **[Go](go.md)** - Full-featured development with go.nvim, gopls LSP, and delve debugging
 - **[JavaScript/TypeScript](javascript.md)** - Modern JS/TS with Vue 3 support, vtsls LSP, ESLint, Prettier
-- **[Lua](lua.md)** - Neovim configuration with lua_ls and API support
 - **[PHP/WordPress](php.md)** - WordPress-optimized development with Intelephense
 - **[PowerShell](powershell.md)** - PowerShell 7+ with Editor Services
 - **[Python](python.md)** - Python development with Pyright, Ruff, virtual env support and UV
@@ -42,12 +41,11 @@ All languages benefit from:
 Each language uses a dedicated prefix for its commands:
 - `<leader>dgo*` - Go commands
 - `<leader>djs*` - JavaScript/TypeScript commands
-- `<leader>dlu*` - Lua commands
 - `<leader>dph*` - PHP commands
 - `<leader>dps*` - PowerShell commands
 - `<leader>dpy*` - Python commands
 - `<leader>drs*` - Rust commands
-- `<leader>dsh*` - Shell commands
+- `<leader>dzs*` - Shell commands
 
 Common patterns across languages:
 - `*r` - Run current file

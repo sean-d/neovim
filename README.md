@@ -2,7 +2,7 @@
 
 A modern, fast, and feature-rich Neovim configuration with comprehensive language support and development tools.
 
-## ✨ Quick Start
+## Quick Start
 
 ```bash
 # Clone the configuration
@@ -12,12 +12,12 @@ git clone https://github.com/sean-d/neovim ~/.config/nvim
 nvim
 ```
 
-## 📚 Documentation
+## Documentation
 
 - **[Full Documentation](https://sean-d.github.io/neovim/)** - Comprehensive guides and references
 - **Local Docs** - From the dashboard, press `h` for local docs or `H` for online documentation
 
-## 🚀 Key Features
+## Key Features
 
 - **Fast Startup** - Optimized lazy loading (~80ms startup time)
 - **Language Support** - Go, Rust, Python, JavaScript/TypeScript, PHP, and more
@@ -27,7 +27,7 @@ nvim
 - **Git Integration** - Inline blame, diff views, and GitHub integration
 - **Debugging** - Full DAP support for multiple languages
 
-## 🛠️ Supported Languages
+## Supported Languages
 
 - Go (with debugging)
 - Rust (with debugging)
@@ -40,14 +40,14 @@ nvim
 - Docker
 - Markdown
 
-## 📦 Requirements
+## Requirements
 
 - Neovim 0.10.0+
 - Git
 - A [Nerd Font](https://www.nerdfonts.com/)
 - Optional: Docker for containerized development
 
-## 🖼️ Screenshots
+## Screenshots
 
 ### Dashboard
 <img width="800" height="600" alt="Custom Dashboard" src="https://github.com/user-attachments/assets/31c3e8e9-76f9-4cad-902d-f4a05e049527" />
@@ -73,7 +73,7 @@ nvim
 
 </details>
 
-## 🎯 Philosophy
+## Philosophy
 
 This configuration follows these principles:
 
@@ -82,6 +82,6 @@ This configuration follows these principles:
 3. **Documented** - Everything is explained
 4. **Consistent** - Unified keybindings across languages
 
-## 📄 License
+## License
 
 MIT

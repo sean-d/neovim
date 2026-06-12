@@ -126,7 +126,6 @@ Here's a taste of the shortcuts that will make your development life better:
 ### Quick Access
 | Key | Description |
 |-----|-------------|
-| `<leader>h` | Return to dashboard |
 | `<leader>/` | Search current buffer |
 | `<C-/>` | Toggle terminal |
 | `<leader>Dt` | Toggle database UI |

@@ -55,7 +55,7 @@ Complete list of all plugins used in this Neovim configuration, organized by cat
 
 ### Syntax & Parsing
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter configurations and abstraction layer
-- [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) - Shows code context (currently disabled)
+- [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) - Shows code context in all visible windows
 
 ### Language Server Protocol
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for LSP
@@ -170,9 +170,6 @@ Supported via LSP (vtsls, eslint) - no specific plugins required
 ## Session Management
 - [auto-session](https://github.com/rmagatti/auto-session) - Automatic session save/restore
 
-## Additional Tools
-- [sticky_pad.nvim](https://github.com/EtiamNullam/sticky_pad.nvim) - Sticky notes for quick temporary notes
-
 ## Utility Libraries
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Lua functions library (used by multiple plugins)
 
@@ -193,6 +190,7 @@ Configuration files are organized in `lua/plugins/`:
 - `dap.lua` - Debugging setup
 - `editor.lua` - Editor enhancements
 - `flash.lua` - Flash navigation
+- `fold.lua` - Fold management
 - `formatting.lua` - Code formatting
 - `go.lua` - Go development
 - `harpoon.lua` - Quick navigation
@@ -200,6 +198,7 @@ Configuration files are organized in `lua/plugins/`:
 - `lsp.lua` - Language servers
 - `lualine.lua` - Status line
 - `markdown.lua` - Markdown tools
+- `mini.lua` - Mini.nvim plugins
 - `outline.lua` - Code outline
 - `php.lua` - PHP development
 - `powershell.lua` - PowerShell support
@@ -207,10 +206,11 @@ Configuration files are organized in `lua/plugins/`:
 - `rest.lua` - REST API client
 - `rust.lua` - Rust development
 - `snacks.lua` - Snacks.nvim suite
+- `terminal.lua` - Terminal configuration
 - `tmux.lua` - Tmux integration
 - `treesitter.lua` - Syntax highlighting
+- `treesitter-context.lua` - Code context display
 - `trouble.lua` - Diagnostics UI
-- `typescript.lua` - TypeScript/JavaScript
 - `ui.lua` - UI improvements
 - `which-key.lua` - Keybinding help
 

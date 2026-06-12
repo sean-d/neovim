@@ -13,13 +13,11 @@ This configuration uses nvim-dap for debugging with:
 
 ## Supported Languages
 
-Currently configured:
 - **Go** - Via delve debugger
-
-Coming soon:
-- Python (debugpy)
-- JavaScript/TypeScript (node debug adapter)
-- Rust (lldb/rust-gdb)
+- **Python** - Via debugpy
+- **JavaScript/TypeScript** - Via js-debug-adapter
+- **Rust** - Via CodeLLDB
+- **PHP** - Via php-debug-adapter
 
 ## Key Mappings
 
@@ -48,7 +46,7 @@ Coming soon:
 | Key | Description |
 |-----|-------------|
 | `<leader>dgoD` | Start Go debugger |
-| `<leader>dgx` | Stop Go debugger |
+| `<leader>dgox` | Stop Go debugger |
 | `<leader>dgoX` | Debug current Go test |
 
 ## Debugging Workflow

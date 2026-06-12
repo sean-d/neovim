@@ -43,7 +43,7 @@ The database UI opens in a drawer on the right side of your screen, similar to t
  Connections
   production_db
   development_db
-  󰦨 Buffers
+  Buffers
  development.sql
   Saved queries
  user_stats.sql

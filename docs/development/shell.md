@@ -270,4 +270,4 @@ The formatter is configured in `lua/plugins/formatting.lua`:
 shfmt must be installed separately (see Prerequisites above).
 
 ---
-[← Back to Rust Development](rust.md) | [Lua Development →](lua.md)
+[← Back to Rust Development](rust.md)

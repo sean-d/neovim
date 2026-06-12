@@ -6,8 +6,6 @@ Overview of UI customization options and visual enhancements.
 
 - **[Theme & Colors](theme.md)** - Catppuccin colorscheme with custom highlights
 - **[Dashboard](dashboard.md)** - Startup screen with ASCII art and quick actions
-- **[Status Line](statusline.md)** - Lualine configuration
-- **[Buffer Line](bufferline.md)** - Tab-like buffer display with groups
 
 ## Visual Enhancements
 

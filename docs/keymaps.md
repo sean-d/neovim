@@ -353,7 +353,7 @@ If using tmux, `<C-h/j/k/l>` seamlessly navigates between Neovim windows and tmu
 | `<leader>ds` | Step over |
 | `<leader>di` | Step into |
 | `<leader>do` | Step out |
-| `<leader>du` | Toggle debug UI |
+| `<leader>dd` | Toggle debug UI |
 | `<leader>de` | Evaluate expression |
 
 ### Scratch Buffers (Notes/Experiments)
