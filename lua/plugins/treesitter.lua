@@ -10,9 +10,9 @@ return {
 
       -- Install parsers that are not yet installed
       local ensure_installed = {
-        "bash", "go", "gomod", "gosum", "gowork", "html",
+        "bash", "go", "gomod", "gosum", "gowork", "gotmpl", "html",
         "javascript", "json", "lua", "luadoc", "luap",
-        "markdown", "markdown_inline", "query", "regex",
+        "markdown", "markdown_inline", "php", "phpdoc", "query", "regex",
         "toml", "tsx", "typescript", "vim", "vimdoc",
         "xml", "yaml", "vue", "css", "scss", "jsdoc",
       }
@@ -45,17 +45,5 @@ return {
         end,
       })
     end,
-  },
-
-  -- Show context of the current function
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    enabled = false, -- Temporarily disabled
-    event = "VeryLazy",
-    opts = {
-      max_lines = 3,
-      multiline_threshold = 20,
-      trim_scope = "outer",
-    },
   },
 }

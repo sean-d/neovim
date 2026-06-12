@@ -84,17 +84,20 @@ return {
       })
       
       -- Virtual text for debugging
-      require("nvim-dap-virtual-text").setup({
-        enabled = true,
-        enabled_commands = true,
-        highlight_changed_variables = true,
-        highlight_new_as_changed = false,
-        show_stop_reason = true,
-        commented = false,
-        only_first_definition = true,
-        all_references = false,
-        filter_references_pattern = '<module',
-      })
+      local ok, virtual_text = pcall(require, "nvim-dap-virtual-text")
+      if ok then
+        virtual_text.setup({
+          enabled = true,
+          enabled_commands = true,
+          highlight_changed_variables = true,
+          highlight_new_as_changed = false,
+          show_stop_reason = true,
+          commented = false,
+          only_first_definition = true,
+          all_references = false,
+          filter_references_pattern = '<module',
+        })
+      end
       
       -- Auto open/close dap-ui
       dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -123,7 +126,7 @@ return {
       -- Python debugging configuration
       dap.adapters.python = {
         type = 'executable',
-        command = 'python',
+        command = 'python3',
         args = { '-m', 'debugpy.adapter' },
       }
       
