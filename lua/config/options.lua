@@ -145,3 +145,10 @@ local disabled_built_ins = {
 for _, plugin in ipairs(disabled_built_ins) do
   vim.g["loaded_" .. plugin] = 1
 end
+
+-- Disable unused language providers (plugins here are all Lua; these only
+-- silence checkhealth warnings for Node/Python/Ruby/Perl remote-plugin hosts)
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0

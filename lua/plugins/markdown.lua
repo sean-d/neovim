@@ -9,6 +9,9 @@ return {
         heading = {
           enabled = false,  -- Disable render-markdown heading to use treesitter highlights
         },
+        latex = {
+          enabled = false,  -- No in-buffer math; avoids latex2text/latex-parser deps
+        },
       })
       
       -- Set up custom highlights
